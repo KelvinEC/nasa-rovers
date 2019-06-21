@@ -18,6 +18,6 @@ struct BBPhotoModel: Codable
     let id: Int
     let sol: Int
     let camera: BBCameraModel
-    let imgSrc: String
+    var imgSrc: String
     let earthDate: String
 }
