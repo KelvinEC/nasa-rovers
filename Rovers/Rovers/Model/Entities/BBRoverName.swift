@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum BBRoverName: String, Codable
+enum BBRoverNameModel: String, Codable
 {
     case curiosity = "Curiosity"
     case opportunity = "Opportunity"

@@ -8,10 +8,10 @@
 
 import Foundation
 
-class BBPhotosMetadata: Codable
+struct BBPhotosMetadataModel: Codable
 {
     let sol: Int
     let earthDate: String
     let totalPhotos: Int
-    let cameras: [BBCamera]
+    let cameras: [BBCameraShortNameModel]
 }

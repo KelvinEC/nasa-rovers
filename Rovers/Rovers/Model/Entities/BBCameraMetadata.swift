@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum BBCamera: String, Codable
+enum BBCameraShortNameModel: String, Codable
 {
     case FHAZ
     case RHAZ
@@ -21,10 +21,10 @@ enum BBCamera: String, Codable
     case MINITES
 }
 
-class BBCameraMetadata: Codable
+struct BBCameraModel: Codable
 {
     let id: Int
-    let name: BBCamera
+    let name: BBCameraShortNameModel
     let roverId: Int
     let fullName: String
 }
