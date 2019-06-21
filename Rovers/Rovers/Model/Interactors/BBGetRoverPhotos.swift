@@ -33,7 +33,7 @@ class BBGetRoverPhotos
 
                         return false
                     }
-
+                    
                     handler(.success(photosSorted))
                 case .failure(let err): handler(.failure(err))
                 }

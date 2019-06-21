@@ -10,8 +10,13 @@
 		385BD6FB22BC611D0072042D /* BBGetRoverManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385BD6FA22BC611D0072042D /* BBGetRoverManifest.swift */; };
 		385BD6FD22BC63940072042D /* BBGetRoverPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385BD6FC22BC63940072042D /* BBGetRoverPhotos.swift */; };
 		385BD70122BC6A490072042D /* BBManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385BD70022BC6A490072042D /* BBManifests.swift */; };
+		386C87B922BC802B0002FB67 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386C87B722BC80090002FB67 /* Kingfisher.framework */; };
+		386C87BB22BC80630002FB67 /* BBPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 386C87BA22BC80630002FB67 /* BBPhotoCollectionViewCell.xib */; };
+		386C87BE22BC80840002FB67 /* BBPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C87BD22BC80840002FB67 /* BBPhotoCollectionViewCell.swift */; };
+		386C87C022BC82530002FB67 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C87BF22BC82530002FB67 /* UIImageViewExtensions.swift */; };
+		386C87C222BC8A620002FB67 /* BBRoverPhotosPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C87C122BC8A620002FB67 /* BBRoverPhotosPresenter.swift */; };
 		3891C68022BBCB6D00C1C394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C67F22BBCB6D00C1C394 /* AppDelegate.swift */; };
-		3891C68222BBCB6D00C1C394 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C68122BBCB6D00C1C394 /* ViewController.swift */; };
+		3891C68222BBCB6D00C1C394 /* BBRoverPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C68122BBCB6D00C1C394 /* BBRoverPhotosViewController.swift */; };
 		3891C68522BBCB6D00C1C394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891C68322BBCB6D00C1C394 /* Main.storyboard */; };
 		3891C68822BBCB6D00C1C394 /* Rovers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3891C68622BBCB6D00C1C394 /* Rovers.xcdatamodeld */; };
 		3891C68A22BBCB6E00C1C394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3891C68922BBCB6E00C1C394 /* Assets.xcassets */; };
@@ -28,6 +33,15 @@
 		3891C6D022BBEBC900C1C394 /* BBRoversNameNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6CF22BBEBC900C1C394 /* BBRoversNameNetwork.swift */; };
 		3891C6D422BBED7D00C1C394 /* BBCameraMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6D322BBED7D00C1C394 /* BBCameraMetadata.swift */; };
 		3891C6D622BBEE3B00C1C394 /* BBRoverPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6D522BBEE3B00C1C394 /* BBRoverPhotos.swift */; };
+		38BD054D22BD90EC00DEC889 /* BBWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD054C22BD90EC00DEC889 /* BBWireframe.swift */; };
+		38BD054F22BD90F500DEC889 /* BBNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD054E22BD90F500DEC889 /* BBNavigator.swift */; };
+		38BD055222BD91D100DEC889 /* BBAppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD055122BD91D100DEC889 /* BBAppStoryboard.swift */; };
+		38BD055422BD921800DEC889 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD055322BD921800DEC889 /* UIViewControllerExtensions.swift */; };
+		38BD055622BD939600DEC889 /* BBPresenterInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD055522BD939600DEC889 /* BBPresenterInjector.swift */; };
+		38BD055822BD93BF00DEC889 /* BBInteractorsInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD055722BD93BF00DEC889 /* BBInteractorsInjector.swift */; };
+		38BD055A22BD93F800DEC889 /* BBDataInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD055922BD93F800DEC889 /* BBDataInjector.swift */; };
+		38BD055C22BDC67500DEC889 /* BBPhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD055B22BDC67500DEC889 /* BBPhotoViewerViewController.swift */; };
+		38BD055E22BDD94100DEC889 /* BBPhotoViewerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD055D22BDD94100DEC889 /* BBPhotoViewerPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +65,15 @@
 		385BD6FA22BC611D0072042D /* BBGetRoverManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBGetRoverManifest.swift; sourceTree = "<group>"; };
 		385BD6FC22BC63940072042D /* BBGetRoverPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBGetRoverPhotos.swift; sourceTree = "<group>"; };
 		385BD70022BC6A490072042D /* BBManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBManifests.swift; sourceTree = "<group>"; };
+		386C87B422BC7F340002FB67 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = ../Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		386C87B722BC80090002FB67 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		386C87BA22BC80630002FB67 /* BBPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BBPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		386C87BD22BC80840002FB67 /* BBPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		386C87BF22BC82530002FB67 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
+		386C87C122BC8A620002FB67 /* BBRoverPhotosPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBRoverPhotosPresenter.swift; sourceTree = "<group>"; };
 		3891C67C22BBCB6D00C1C394 /* Rovers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rovers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3891C67F22BBCB6D00C1C394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3891C68122BBCB6D00C1C394 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3891C68122BBCB6D00C1C394 /* BBRoverPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBRoverPhotosViewController.swift; sourceTree = "<group>"; };
 		3891C68422BBCB6D00C1C394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3891C68722BBCB6D00C1C394 /* Rovers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rovers.xcdatamodel; sourceTree = "<group>"; };
 		3891C68922BBCB6E00C1C394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +95,15 @@
 		3891C6CF22BBEBC900C1C394 /* BBRoversNameNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBRoversNameNetwork.swift; sourceTree = "<group>"; };
 		3891C6D322BBED7D00C1C394 /* BBCameraMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBCameraMetadata.swift; sourceTree = "<group>"; };
 		3891C6D522BBEE3B00C1C394 /* BBRoverPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBRoverPhotos.swift; sourceTree = "<group>"; };
+		38BD054C22BD90EC00DEC889 /* BBWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBWireframe.swift; sourceTree = "<group>"; };
+		38BD054E22BD90F500DEC889 /* BBNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBNavigator.swift; sourceTree = "<group>"; };
+		38BD055122BD91D100DEC889 /* BBAppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBAppStoryboard.swift; sourceTree = "<group>"; };
+		38BD055322BD921800DEC889 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		38BD055522BD939600DEC889 /* BBPresenterInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBPresenterInjector.swift; sourceTree = "<group>"; };
+		38BD055722BD93BF00DEC889 /* BBInteractorsInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBInteractorsInjector.swift; sourceTree = "<group>"; };
+		38BD055922BD93F800DEC889 /* BBDataInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBDataInjector.swift; sourceTree = "<group>"; };
+		38BD055B22BDC67500DEC889 /* BBPhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBPhotoViewerViewController.swift; sourceTree = "<group>"; };
+		38BD055D22BDD94100DEC889 /* BBPhotoViewerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBPhotoViewerPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				386C87B922BC802B0002FB67 /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +150,24 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		386C87B322BC7F330002FB67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				386C87B722BC80090002FB67 /* Kingfisher.framework */,
+				386C87B422BC7F340002FB67 /* Kingfisher.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		386C87BC22BC80690002FB67 /* BBPhotoCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				386C87BA22BC80630002FB67 /* BBPhotoCollectionViewCell.xib */,
+				386C87BD22BC80840002FB67 /* BBPhotoCollectionViewCell.swift */,
+			);
+			path = BBPhotoCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		3891C67322BBCB6D00C1C394 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +175,7 @@
 				3891C69622BBCB6E00C1C394 /* RoversTests */,
 				3891C6A122BBCB6E00C1C394 /* RoversUITests */,
 				3891C67D22BBCB6D00C1C394 /* Products */,
+				386C87B322BC7F330002FB67 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,13 +192,11 @@
 		3891C67E22BBCB6D00C1C394 /* Rovers */ = {
 			isa = PBXGroup;
 			children = (
-				3891C6B422BBCB9A00C1C394 /* Utils */,
 				3891C6B322BBCB9400C1C394 /* Model */,
 				3891C6B222BBCB8F00C1C394 /* View */,
 				3891C6B122BBCB8A00C1C394 /* Data */,
 				3891C6B022BBCB8200C1C394 /* DI */,
 				3891C67F22BBCB6D00C1C394 /* AppDelegate.swift */,
-				3891C68122BBCB6D00C1C394 /* ViewController.swift */,
 				3891C68322BBCB6D00C1C394 /* Main.storyboard */,
 				3891C68922BBCB6E00C1C394 /* Assets.xcassets */,
 				3891C68B22BBCB6E00C1C394 /* LaunchScreen.storyboard */,
@@ -180,6 +227,9 @@
 		3891C6B022BBCB8200C1C394 /* DI */ = {
 			isa = PBXGroup;
 			children = (
+				38BD055522BD939600DEC889 /* BBPresenterInjector.swift */,
+				38BD055722BD93BF00DEC889 /* BBInteractorsInjector.swift */,
+				38BD055922BD93F800DEC889 /* BBDataInjector.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -197,6 +247,8 @@
 		3891C6B222BBCB8F00C1C394 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3891C6B422BBCB9A00C1C394 /* Utils */,
+				38BD055022BD90F900DEC889 /* Navigation */,
 				3891C6BA22BBCBC600C1C394 /* Custom */,
 				3891C6B922BBCBC200C1C394 /* Presenters */,
 				3891C6B822BBCBBC00C1C394 /* ViewControllers */,
@@ -216,6 +268,8 @@
 		3891C6B422BBCB9A00C1C394 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				386C87BF22BC82530002FB67 /* UIImageViewExtensions.swift */,
+				38BD055322BD921800DEC889 /* UIViewControllerExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -248,6 +302,8 @@
 		3891C6B822BBCBBC00C1C394 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3891C68122BBCB6D00C1C394 /* BBRoverPhotosViewController.swift */,
+				38BD055B22BDC67500DEC889 /* BBPhotoViewerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -255,6 +311,8 @@
 		3891C6B922BBCBC200C1C394 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				386C87C122BC8A620002FB67 /* BBRoverPhotosPresenter.swift */,
+				38BD055D22BDD94100DEC889 /* BBPhotoViewerPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -262,6 +320,7 @@
 		3891C6BA22BBCBC600C1C394 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				386C87BC22BC80690002FB67 /* BBPhotoCollectionViewCell */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -287,6 +346,16 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		38BD055022BD90F900DEC889 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				38BD054C22BD90EC00DEC889 /* BBWireframe.swift */,
+				38BD054E22BD90F500DEC889 /* BBNavigator.swift */,
+				38BD055122BD91D100DEC889 /* BBAppStoryboard.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -294,6 +363,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3891C6A722BBCB6E00C1C394 /* Build configuration list for PBXNativeTarget "Rovers" */;
 			buildPhases = (
+				386C87B622BC7F3C0002FB67 /* Carthage */,
 				3891C67822BBCB6D00C1C394 /* Sources */,
 				3891C67922BBCB6D00C1C394 /* Frameworks */,
 				3891C67A22BBCB6D00C1C394 /* Resources */,
@@ -395,6 +465,7 @@
 				3891C68D22BBCB6E00C1C394 /* LaunchScreen.storyboard in Resources */,
 				3891C68A22BBCB6E00C1C394 /* Assets.xcassets in Resources */,
 				3891C68522BBCB6D00C1C394 /* Main.storyboard in Resources */,
+				386C87BB22BC80630002FB67 /* BBPhotoCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +485,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		386C87B622BC7F3C0002FB67 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3891C67822BBCB6D00C1C394 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -422,16 +516,28 @@
 				385BD6FD22BC63940072042D /* BBGetRoverPhotos.swift in Sources */,
 				3891C6D422BBED7D00C1C394 /* BBCameraMetadata.swift in Sources */,
 				3891C6BE22BBDB7F00C1C394 /* BBNetwork.swift in Sources */,
+				38BD055E22BDD94100DEC889 /* BBPhotoViewerPresenter.swift in Sources */,
 				3891C6C022BBDCB600C1C394 /* BBConnectionTest.swift in Sources */,
+				386C87C022BC82530002FB67 /* UIImageViewExtensions.swift in Sources */,
+				38BD055822BD93BF00DEC889 /* BBInteractorsInjector.swift in Sources */,
 				385BD6FB22BC611D0072042D /* BBGetRoverManifest.swift in Sources */,
+				38BD055622BD939600DEC889 /* BBPresenterInjector.swift in Sources */,
+				38BD054F22BD90F500DEC889 /* BBNavigator.swift in Sources */,
+				38BD054D22BD90EC00DEC889 /* BBWireframe.swift in Sources */,
 				3891C6C622BBE43500C1C394 /* BBPhotosMetadata.swift in Sources */,
 				3891C6D022BBEBC900C1C394 /* BBRoversNameNetwork.swift in Sources */,
-				3891C68222BBCB6D00C1C394 /* ViewController.swift in Sources */,
+				38BD055222BD91D100DEC889 /* BBAppStoryboard.swift in Sources */,
+				386C87BE22BC80840002FB67 /* BBPhotoCollectionViewCell.swift in Sources */,
+				3891C68222BBCB6D00C1C394 /* BBRoverPhotosViewController.swift in Sources */,
+				38BD055A22BD93F800DEC889 /* BBDataInjector.swift in Sources */,
 				3891C6C222BBDDED00C1C394 /* BBNetworkError.swift in Sources */,
 				3891C6CE22BBEB6800C1C394 /* BBRoverName.swift in Sources */,
+				386C87C222BC8A620002FB67 /* BBRoverPhotosPresenter.swift in Sources */,
 				3891C68022BBCB6D00C1C394 /* AppDelegate.swift in Sources */,
+				38BD055C22BDC67500DEC889 /* BBPhotoViewerViewController.swift in Sources */,
 				385BD70122BC6A490072042D /* BBManifests.swift in Sources */,
 				3891C68822BBCB6D00C1C394 /* Rovers.xcdatamodeld in Sources */,
+				38BD055422BD921800DEC889 /* UIViewControllerExtensions.swift in Sources */,
 				3891C6D622BBEE3B00C1C394 /* BBRoverPhotos.swift in Sources */,
 				3891C6CC22BBEB3C00C1C394 /* BBRoversPhotosNetwork.swift in Sources */,
 				3891C6C422BBE0CC00C1C394 /* BBManifestsNetwork.swift in Sources */,
@@ -611,6 +717,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Rovers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -630,6 +740,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Rovers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
