@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		385BD6FB22BC611D0072042D /* BBGetRoverManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385BD6FA22BC611D0072042D /* BBGetRoverManifest.swift */; };
+		385BD6FD22BC63940072042D /* BBGetRoverPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385BD6FC22BC63940072042D /* BBGetRoverPhotos.swift */; };
+		385BD70122BC6A490072042D /* BBManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385BD70022BC6A490072042D /* BBManifests.swift */; };
 		3891C68022BBCB6D00C1C394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C67F22BBCB6D00C1C394 /* AppDelegate.swift */; };
 		3891C68222BBCB6D00C1C394 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C68122BBCB6D00C1C394 /* ViewController.swift */; };
 		3891C68522BBCB6D00C1C394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891C68322BBCB6D00C1C394 /* Main.storyboard */; };
@@ -20,12 +23,9 @@
 		3891C6C222BBDDED00C1C394 /* BBNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6C122BBDDED00C1C394 /* BBNetworkError.swift */; };
 		3891C6C422BBE0CC00C1C394 /* BBManifestsNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6C322BBE0CC00C1C394 /* BBManifestsNetwork.swift */; };
 		3891C6C622BBE43500C1C394 /* BBPhotosMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6C522BBE43500C1C394 /* BBPhotosMetadata.swift */; };
-		3891C6C822BBE66100C1C394 /* BBPhotoManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6C722BBE66100C1C394 /* BBPhotoManifest.swift */; };
-		3891C6CA22BBE86900C1C394 /* BBManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6C922BBE86900C1C394 /* BBManifests.swift */; };
 		3891C6CC22BBEB3C00C1C394 /* BBRoversPhotosNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6CB22BBEB3C00C1C394 /* BBRoversPhotosNetwork.swift */; };
 		3891C6CE22BBEB6800C1C394 /* BBRoverName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6CD22BBEB6800C1C394 /* BBRoverName.swift */; };
 		3891C6D022BBEBC900C1C394 /* BBRoversNameNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6CF22BBEBC900C1C394 /* BBRoversNameNetwork.swift */; };
-		3891C6D222BBED1100C1C394 /* BBPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6D122BBED1100C1C394 /* BBPhoto.swift */; };
 		3891C6D422BBED7D00C1C394 /* BBCameraMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6D322BBED7D00C1C394 /* BBCameraMetadata.swift */; };
 		3891C6D622BBEE3B00C1C394 /* BBRoverPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6D522BBEE3B00C1C394 /* BBRoverPhotos.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		385BD6FA22BC611D0072042D /* BBGetRoverManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBGetRoverManifest.swift; sourceTree = "<group>"; };
+		385BD6FC22BC63940072042D /* BBGetRoverPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBGetRoverPhotos.swift; sourceTree = "<group>"; };
+		385BD70022BC6A490072042D /* BBManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBManifests.swift; sourceTree = "<group>"; };
 		3891C67C22BBCB6D00C1C394 /* Rovers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rovers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3891C67F22BBCB6D00C1C394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3891C68122BBCB6D00C1C394 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,12 +70,9 @@
 		3891C6C122BBDDED00C1C394 /* BBNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBNetworkError.swift; sourceTree = "<group>"; };
 		3891C6C322BBE0CC00C1C394 /* BBManifestsNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBManifestsNetwork.swift; sourceTree = "<group>"; };
 		3891C6C522BBE43500C1C394 /* BBPhotosMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBPhotosMetadata.swift; sourceTree = "<group>"; };
-		3891C6C722BBE66100C1C394 /* BBPhotoManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBPhotoManifest.swift; sourceTree = "<group>"; };
-		3891C6C922BBE86900C1C394 /* BBManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBManifests.swift; sourceTree = "<group>"; };
 		3891C6CB22BBEB3C00C1C394 /* BBRoversPhotosNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBRoversPhotosNetwork.swift; sourceTree = "<group>"; };
 		3891C6CD22BBEB6800C1C394 /* BBRoverName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBRoverName.swift; sourceTree = "<group>"; };
 		3891C6CF22BBEBC900C1C394 /* BBRoversNameNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBRoversNameNetwork.swift; sourceTree = "<group>"; };
-		3891C6D122BBED1100C1C394 /* BBPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBPhoto.swift; sourceTree = "<group>"; };
 		3891C6D322BBED7D00C1C394 /* BBCameraMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBCameraMetadata.swift; sourceTree = "<group>"; };
 		3891C6D522BBEE3B00C1C394 /* BBRoverPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBRoverPhotos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +102,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		385BD6FE22BC66FD0072042D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3891C6C122BBDDED00C1C394 /* BBNetworkError.swift */,
+				3891C6CF22BBEBC900C1C394 /* BBRoversNameNetwork.swift */,
+				3891C6BD22BBDB7F00C1C394 /* BBNetwork.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		385BD6FF22BC671D0072042D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3891C6BF22BBDCB600C1C394 /* BBConnectionTest.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		3891C67322BBCB6D00C1C394 = {
 			isa = PBXGroup;
 			children = (
@@ -205,13 +223,6 @@
 		3891C6B522BBCB9F00C1C394 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				3891C6C522BBE43500C1C394 /* BBPhotosMetadata.swift */,
-				3891C6C722BBE66100C1C394 /* BBPhotoManifest.swift */,
-				3891C6C922BBE86900C1C394 /* BBManifests.swift */,
-				3891C6CD22BBEB6800C1C394 /* BBRoverName.swift */,
-				3891C6D122BBED1100C1C394 /* BBPhoto.swift */,
-				3891C6D322BBED7D00C1C394 /* BBCameraMetadata.swift */,
-				3891C6D522BBEE3B00C1C394 /* BBRoverPhotos.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -226,12 +237,10 @@
 		3891C6B722BBCBAC00C1C394 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				3891C6BD22BBDB7F00C1C394 /* BBNetwork.swift */,
-				3891C6BF22BBDCB600C1C394 /* BBConnectionTest.swift */,
-				3891C6C122BBDDED00C1C394 /* BBNetworkError.swift */,
+				385BD6FF22BC671D0072042D /* Utils */,
+				385BD6FE22BC66FD0072042D /* Common */,
 				3891C6C322BBE0CC00C1C394 /* BBManifestsNetwork.swift */,
 				3891C6CB22BBEB3C00C1C394 /* BBRoversPhotosNetwork.swift */,
-				3891C6CF22BBEBC900C1C394 /* BBRoversNameNetwork.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -260,6 +269,8 @@
 		3891C6BB22BBCC6800C1C394 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				385BD6FA22BC611D0072042D /* BBGetRoverManifest.swift */,
+				385BD6FC22BC63940072042D /* BBGetRoverPhotos.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -267,6 +278,11 @@
 		3891C6BC22BBCC6E00C1C394 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				385BD70022BC6A490072042D /* BBManifests.swift */,
+				3891C6C522BBE43500C1C394 /* BBPhotosMetadata.swift */,
+				3891C6CD22BBEB6800C1C394 /* BBRoverName.swift */,
+				3891C6D322BBED7D00C1C394 /* BBCameraMetadata.swift */,
+				3891C6D522BBEE3B00C1C394 /* BBRoverPhotos.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -403,18 +419,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				385BD6FD22BC63940072042D /* BBGetRoverPhotos.swift in Sources */,
 				3891C6D422BBED7D00C1C394 /* BBCameraMetadata.swift in Sources */,
 				3891C6BE22BBDB7F00C1C394 /* BBNetwork.swift in Sources */,
 				3891C6C022BBDCB600C1C394 /* BBConnectionTest.swift in Sources */,
+				385BD6FB22BC611D0072042D /* BBGetRoverManifest.swift in Sources */,
 				3891C6C622BBE43500C1C394 /* BBPhotosMetadata.swift in Sources */,
-				3891C6C822BBE66100C1C394 /* BBPhotoManifest.swift in Sources */,
 				3891C6D022BBEBC900C1C394 /* BBRoversNameNetwork.swift in Sources */,
 				3891C68222BBCB6D00C1C394 /* ViewController.swift in Sources */,
 				3891C6C222BBDDED00C1C394 /* BBNetworkError.swift in Sources */,
-				3891C6CA22BBE86900C1C394 /* BBManifests.swift in Sources */,
 				3891C6CE22BBEB6800C1C394 /* BBRoverName.swift in Sources */,
 				3891C68022BBCB6D00C1C394 /* AppDelegate.swift in Sources */,
-				3891C6D222BBED1100C1C394 /* BBPhoto.swift in Sources */,
+				385BD70122BC6A490072042D /* BBManifests.swift in Sources */,
 				3891C68822BBCB6D00C1C394 /* Rovers.xcdatamodeld in Sources */,
 				3891C6D622BBEE3B00C1C394 /* BBRoverPhotos.swift in Sources */,
 				3891C6CC22BBEB3C00C1C394 /* BBRoversPhotosNetwork.swift in Sources */,

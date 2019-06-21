@@ -1,5 +1,5 @@
 //
-//  BBPhotoManifest.swift
+//  BBManifests.swift
 //  Rovers
 //
 //  Created by Kelvin Lima on 20/06/19.
@@ -8,14 +8,19 @@
 
 import Foundation
 
-class BBPhotoManifest: Codable
+struct BBManifestsModel: Codable
 {
-    let name: BBRoverName
+    let photoManifest: BBRoverManifestModel
+}
+
+struct BBRoverManifestModel: Codable
+{
+    let name: BBRoverNameModel
     let landingDate: String
     let launchDate: String
     let status: String
     let maxSol: Int
     let maxDate: String
     let totalPhotos: Int
-    let photos: [BBPhotosMetadata]
+    let photos: [BBPhotosMetadataModel]
 }

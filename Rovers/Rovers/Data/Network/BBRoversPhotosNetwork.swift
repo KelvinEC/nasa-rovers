@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum BBRoversPhotosParameters: String
+{
+    case earthDate = "earth_date"
+}
+
 class BBRoversPhotosNetworking
 {
     private let networkingLayer: BBNetworking
@@ -19,10 +24,12 @@ class BBRoversPhotosNetworking
         networkingLayer = networking
     }
 
-    func getRoverManifest(rover: BBRoverNameNetwork, date: String,
-                          handler: @escaping (Result<BBRoverPhotos?, Error>) -> Void)
+    func getRoverPhotos(rover: BBRoverNameNetwork, date: String,
+                          handler: @escaping (Result<BBRoverPhotosModel?, Error>) -> Void)
     {
-        if let request = networkingLayer.createRequest(operation: mainRoute + rover.rawValue + finalRoute, type: .get, parameters: ["earth_date": date]) {
+        if let request = networkingLayer.createRequest(operation: mainRoute + rover.rawValue + finalRoute,
+                                                       type: .get,
+                                                       parameters: [BBRoversPhotosParameters.earthDate.rawValue: date]) {
             networkingLayer.execute(request: request) { result in
                 switch result {
                 case .success(let photos):
