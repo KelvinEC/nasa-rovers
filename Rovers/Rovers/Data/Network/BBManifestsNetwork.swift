@@ -18,7 +18,7 @@ class BBManifestsNetworking
         networkingLayer = networking
     }
 
-    func getRoverManifest(rover: BBRoverNameNetwork, handler: @escaping (Result<BBManifests?, Error>) -> Void)
+    func getRoverManifest(rover: BBRoverNameNetwork, handler: @escaping (Result<BBManifestsModel?, Error>) -> Void)
     {
         if let request = networkingLayer.createRequest(operation: mainRoute + rover.rawValue, type: .get, parameters: nil) {
             networkingLayer.execute(request: request) { result in

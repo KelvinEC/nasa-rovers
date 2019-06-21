@@ -14,23 +14,25 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let manifest = BBManifestsNetworking(BBNetworking.shared)
         let roverPhotos = BBRoversPhotosNetworking(BBNetworking.shared)
+        let getRoverManifest = BBGetRoverManifest(roverManifestNetworking: manifest)
+        let getRoverPhotos = BBGetRoverPhotos(roverPhotosNetworking: roverPhotos)
 
-        manifest.getRoverManifest(rover: .curiosity) { result in
+        getRoverManifest.getManifest(for: .curiosity) { result in
             switch result {
             case .success(let manifest):
-                if let maxDate = manifest?.photoManifest.maxDate {
-                    print(maxDate)
-                    roverPhotos.getRoverManifest(rover: .curiosity, date: maxDate) { result in
+                if let mWrapped = manifest {
+                    print(mWrapped.maxDate)
+                    getRoverPhotos.get(for: .curiosity, date: mWrapped.maxDate) { result in
                         switch result {
-                        case .success(let photosMetadata):
-                            print(photosMetadata?.photos.map({$0.camera}) ?? "")
-                        case .failure(let e):
-                            print(e)
+                        case .success(let photos):
+                            if let pWrapped = photos {
+                                print(pWrapped.map({$0.earthDate}))
+                            }
+                        case .failure(let err): print(err)
                         }
                     }
                 }
-            case .failure(let err):
-                print(err.localizedDescription)
+            case .failure(let err): print(err)
             }
         }
     }
