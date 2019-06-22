@@ -24,4 +24,12 @@ class BBNavigator
 
         from.present(navigation, animated: true, completion: nil)
     }
+
+    static func navigateToFilterByDate(dates: [BBDateFilter], delegate: BBFilterByDateProtocol, from: UIViewController)
+    {
+        let vc = BBWireframe.createFilterByDateController(dates, delegate: delegate)
+        let navigation = BBWireframe.createNavigationController(vc)
+
+        from.present(navigation, animated: true, completion: nil)
+    }
 }

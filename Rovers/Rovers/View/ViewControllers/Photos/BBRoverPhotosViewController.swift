@@ -28,7 +28,7 @@ class BBRoverPhotosViewController: UIViewController
     {
         super.viewDidLoad()
         self.navigationItem.title = "Mars Rovers Photos"
-
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "calendar"), style: .plain, target: self, action: #selector(filterByDateTapped))
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
@@ -55,6 +55,11 @@ class BBRoverPhotosViewController: UIViewController
         eventHandler.selectedRoverChanged(sender.selectedSegmentIndex)
     }
 
+    @objc func filterByDateTapped()
+    {
+        eventHandler.filterByDateTapped()
+    }
+    
     // MARK: - View Protocol Methods
     func show(rovers: [String])
     {

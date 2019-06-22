@@ -11,10 +11,13 @@ import Foundation
 class BBGetRoverManifest
 {
     private let roverManifestNetworking: BBManifestsNetworking
+    private let _serverDateFormatter: DateFormatter
 
     init(roverManifestNetworking: BBManifestsNetworking)
     {
         self.roverManifestNetworking = roverManifestNetworking
+        _serverDateFormatter = DateFormatter()
+        _serverDateFormatter.dateFormat = BBDateFormatters.server.rawValue
     }
 
     func getManifest(for roverName: BBRoverNameModel,
@@ -23,7 +26,21 @@ class BBGetRoverManifest
             roverManifestNetworking.getRoverManifest(rover: rover) { result in
                 switch result {
                 case .success(let manifest):
-                    handler(.success(manifest?.photoManifest))
+                    if var photoManifest = manifest?.photoManifest {
+                        photoManifest.photos.sort(by: { f, s in
+                            if let fDateS = f.earthDate, let  sDateS = s.earthDate {
+                                if let fDate = self._serverDateFormatter.date(from: fDateS),
+                                    let sDate = self._serverDateFormatter.date(from: sDateS) {
+                                    return fDate.compare(sDate) == .orderedDescending
+                                }
+                            }
+                            return false
+                        })
+                        handler(.success(photoManifest))
+                        return
+                    }
+
+                    handler(.success(nil))
                 case .failure(let err):
                     handler(.failure(err))
                 }
