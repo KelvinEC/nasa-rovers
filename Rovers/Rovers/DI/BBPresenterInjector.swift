@@ -10,17 +10,22 @@ import Foundation
 
 class BBPresenterInjector
 {
-    static func createRoversPhotosViewControllerPresenter() -> BBRoverPhotosPresenter
+    static func createRoversPhotosViewControllerPresenter(manifests: [BBRoverManifestModel]) -> BBRoverPhotosPresenter
     {
-        let manifestsInteractor = BBInteractorsInjector.createGetManifestsInteractor()
         let photosInteractor = BBInteractorsInjector.createGetRoverPhotosInteractor()
 
-        return BBRoverPhotosPresenter(roverManifestInteractor: manifestsInteractor,
-                                      roverPhotosInteractor: photosInteractor)
+        return BBRoverPhotosPresenter(photosInteractor, roversManifests: manifests)
     }
 
     static func createPhotoViewerControllerPResenter(photo: BBPhotoModel) -> BBPhotoViewerPresenter
     {
         return BBPhotoViewerPresenter(photo: photo)
+    }
+
+    static func createSyncDataControllerPresenter() -> BBSyncDataPresenter
+    {
+        let manifestsInteractor = BBInteractorsInjector.createGetManifestsInteractor()
+
+        return BBSyncDataPresenter(manifestsInteractor)
     }
 }

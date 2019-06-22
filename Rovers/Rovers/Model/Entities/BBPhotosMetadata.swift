@@ -11,7 +11,7 @@ import Foundation
 struct BBPhotosMetadataModel: Codable
 {
     let sol: Int
-    let earthDate: String
+    let earthDate: String?
     let totalPhotos: Int
     let cameras: [BBCameraShortNameModel]
 }

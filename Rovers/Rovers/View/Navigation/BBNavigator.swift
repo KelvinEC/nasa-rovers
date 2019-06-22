@@ -16,4 +16,12 @@ class BBNavigator
 
         from.present(vc, animated: true, completion: nil)
     }
+
+    static func navigateToRoversPhotosViewController(manifests: [BBRoverManifestModel], from: UIViewController)
+    {
+        let vc = BBWireframe.createRoverPhotoList(manifets: manifests)
+        let navigation = BBWireframe.createNavigationController(vc)
+
+        from.present(navigation, animated: true, completion: nil)
+    }
 }

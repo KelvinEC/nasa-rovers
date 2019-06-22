@@ -13,20 +13,23 @@ class BBRoverPhotosPresenter
     weak var view: BBRoverPhotosViewController?
     private let _roversAvailable = BBRoverNameModel.allCases
     private var _currentSelectedIndex: Int = 0
-    private let _getRoverManifestInteractor: BBGetRoverManifest
     private let _getRoverPhotosInteractor: BBGetRoverPhotos
     private var _displayingPhotos: [BBPhotoModel] = [BBPhotoModel]()
+    private let _roversManifests: [BBRoverManifestModel]
 
-    init(roverManifestInteractor: BBGetRoverManifest, roverPhotosInteractor: BBGetRoverPhotos)
+    init(_ roverPhotosInteractor: BBGetRoverPhotos, roversManifests: [BBRoverManifestModel])
     {
-        self._getRoverManifestInteractor = roverManifestInteractor
         self._getRoverPhotosInteractor = roverPhotosInteractor
+        self._roversManifests = roversManifests
     }
 
     func viewDidLoad()
     {
         view?.show(rovers: _getRovers())
-        getPhotos(for: _roversAvailable[_currentSelectedIndex], date: "2019-06-20")
+        let currentRover = _roversAvailable[_currentSelectedIndex]
+        if let roverMaxDate = _roversManifests.first(where: {$0.name == currentRover})?.maxDate {
+            getPhotos(for: currentRover , date: roverMaxDate)
+        }
     }
 
     func selectedRoverPhoto(index: Int)
@@ -39,7 +42,10 @@ class BBRoverPhotosPresenter
     func selectedRoverChanged(_ index: Int)
     {
         _currentSelectedIndex = index
-        getPhotos(for: _roversAvailable[_currentSelectedIndex], date: "2019-06-20")
+        let currentRover = _roversAvailable[_currentSelectedIndex]
+        if let roverMaxDate = _roversManifests.first(where: {$0.name == currentRover})?.maxDate {
+            getPhotos(for: currentRover , date: roverMaxDate)
+        }
     }
 
     private func _getRovers() -> [String]
@@ -65,16 +71,6 @@ class BBRoverPhotosPresenter
                         }
                     }
                 }
-            case .failure(let err): print(err)
-            }
-        }
-    }
-
-    func getManifest(for rover: BBRoverNameModel)
-    {
-        _getRoverManifestInteractor.getManifest(for: rover) { result in
-            switch result {
-            case .success(let manifest): break
             case .failure(let err): print(err)
             }
         }
