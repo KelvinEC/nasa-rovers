@@ -10,6 +10,7 @@ import UIKit
 
 enum BBAppStoryboard : String {
     case Main = "Main"
+    case Onboarding = "Onboarding"
 
     var instance : UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)

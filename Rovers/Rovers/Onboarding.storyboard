@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboarding Pager View Controller-->
+        <scene sceneID="XKT-cf-ZLr">
+            <objects>
+                <pageViewController storyboardIdentifier="BBOnboardingPagerViewController_ID" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="mid" doubleSided="YES" id="5pX-F4-ncj" customClass="BBOnboardingPagerViewController" customModule="Rovers" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uRs-43-lNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14" y="-3"/>
+        </scene>
+        <!--Welcome Onboarding View Controller-->
+        <scene sceneID="tvQ-vW-MKk">
+            <objects>
+                <viewController storyboardIdentifier="BBWelcomeOnboardingViewController_ID" id="RuZ-Qq-n4Y" customClass="BBWelcomeOnboardingViewController" customModule="Rovers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1JI-6u-wXW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mars" translatesAutoresizingMaskIntoConstraints="NO" id="LOy-0f-ZB5">
+                                <rect key="frame" x="79" y="94" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="cOo-UM-cP9"/>
+                                    <constraint firstAttribute="width" constant="256" id="dSl-JJ-HLB"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ug-Wn-CHO">
+                                <rect key="frame" x="32" y="414" width="350" height="37.5"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, Astronaut! Here you will travel around Mars with pictures taken by Rovers during the last years. HAVE FUN!" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wu-Hb-KcA">
+                                <rect key="frame" x="32" y="483.5" width="350" height="61"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7wu-Hb-KcA" firstAttribute="leading" secondItem="1xN-wB-VBS" secondAttribute="leading" constant="32" id="36Q-K9-3nM"/>
+                            <constraint firstItem="1xN-wB-VBS" firstAttribute="trailing" secondItem="7wu-Hb-KcA" secondAttribute="trailing" constant="32" id="3Jt-oR-Vre"/>
+                            <constraint firstItem="LOy-0f-ZB5" firstAttribute="top" secondItem="1xN-wB-VBS" secondAttribute="top" constant="50" id="Dqh-le-GpS"/>
+                            <constraint firstItem="7wu-Hb-KcA" firstAttribute="top" secondItem="4ug-Wn-CHO" secondAttribute="bottom" constant="32" id="FAZ-8W-FTe"/>
+                            <constraint firstItem="1xN-wB-VBS" firstAttribute="trailing" secondItem="4ug-Wn-CHO" secondAttribute="trailing" constant="32" id="MYg-Cr-QsN"/>
+                            <constraint firstItem="LOy-0f-ZB5" firstAttribute="centerX" secondItem="1JI-6u-wXW" secondAttribute="centerX" id="Yh1-vn-8XS"/>
+                            <constraint firstItem="4ug-Wn-CHO" firstAttribute="leading" secondItem="1xN-wB-VBS" secondAttribute="leading" constant="32" id="qwO-mi-COu"/>
+                            <constraint firstItem="4ug-Wn-CHO" firstAttribute="top" secondItem="LOy-0f-ZB5" secondAttribute="bottom" constant="64" id="sBg-0i-1U1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1xN-wB-VBS"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="7wu-Hb-KcA" id="YgN-zR-tIc"/>
+                        <outlet property="welcomeLabel" destination="4ug-Wn-CHO" id="Pnx-hQ-sS5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xjh-Kb-sji" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="787" y="-3"/>
+        </scene>
+        <!--Sync Data Onboarding View Controller-->
+        <scene sceneID="ZCe-nJ-bC0">
+            <objects>
+                <viewController storyboardIdentifier="BBSyncDataOnboardingViewController_ID" id="1s9-Bw-HwO" customClass="BBSyncDataOnboardingViewController" customModule="Rovers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QOF-3g-Q6c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rover" translatesAutoresizingMaskIntoConstraints="NO" id="leG-Yy-MkJ">
+                                <rect key="frame" x="79" y="94" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="9C3-4w-gOg"/>
+                                    <constraint firstAttribute="width" constant="256" id="i2H-AK-R15"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lak-oQ-OUp">
+                                <rect key="frame" x="32" y="806" width="350" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dt7-rv-Gx2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Sync Data"/>
+                                <connections>
+                                    <action selector="syncDataTapped:" destination="1s9-Bw-HwO" eventType="touchUpInside" id="ho4-wi-fcp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello from Curiosity, Opportunity and Spirit!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFG-hV-qSG">
+                                <rect key="frame" x="32" y="404" width="350" height="74.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74.5" id="Won-UV-Hww"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Ivq-Ea-PU3">
+                                <rect key="frame" x="32" y="510.5" width="350" height="279.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ivq-Ea-PU3" firstAttribute="leading" secondItem="b0x-cA-Tg7" secondAttribute="leading" constant="32" id="8zX-P5-9VW"/>
+                            <constraint firstItem="JFG-hV-qSG" firstAttribute="top" secondItem="leG-Yy-MkJ" secondAttribute="bottom" constant="54" id="FDh-5s-e2h"/>
+                            <constraint firstItem="JFG-hV-qSG" firstAttribute="leading" secondItem="b0x-cA-Tg7" secondAttribute="leading" constant="32" id="O6b-1s-2Bo"/>
+                            <constraint firstItem="Ivq-Ea-PU3" firstAttribute="top" secondItem="JFG-hV-qSG" secondAttribute="bottom" constant="32" id="O7c-y4-dma"/>
+                            <constraint firstItem="Lak-oQ-OUp" firstAttribute="leading" secondItem="b0x-cA-Tg7" secondAttribute="leading" constant="32" id="Ru0-Qp-bee"/>
+                            <constraint firstItem="b0x-cA-Tg7" firstAttribute="trailing" secondItem="Ivq-Ea-PU3" secondAttribute="trailing" constant="32" id="SaG-wT-Yle"/>
+                            <constraint firstItem="Lak-oQ-OUp" firstAttribute="top" secondItem="Ivq-Ea-PU3" secondAttribute="bottom" constant="16" id="UvR-Hr-sQ5"/>
+                            <constraint firstItem="leG-Yy-MkJ" firstAttribute="top" secondItem="b0x-cA-Tg7" secondAttribute="top" constant="50" id="Xwv-Lx-Nn7"/>
+                            <constraint firstItem="b0x-cA-Tg7" firstAttribute="trailing" secondItem="JFG-hV-qSG" secondAttribute="trailing" constant="32" id="eRa-oA-oHj"/>
+                            <constraint firstItem="leG-Yy-MkJ" firstAttribute="centerX" secondItem="QOF-3g-Q6c" secondAttribute="centerX" id="hWI-V7-Wan"/>
+                            <constraint firstItem="b0x-cA-Tg7" firstAttribute="bottom" secondItem="Lak-oQ-OUp" secondAttribute="bottom" constant="16" id="haX-d1-mSh"/>
+                            <constraint firstItem="b0x-cA-Tg7" firstAttribute="trailing" secondItem="Lak-oQ-OUp" secondAttribute="trailing" constant="32" id="zyG-fq-8yi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="b0x-cA-Tg7"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Ivq-Ea-PU3" id="ljx-xe-toV"/>
+                        <outlet property="roversHelloLabel" destination="JFG-hV-qSG" id="aZ7-b9-dZk"/>
+                        <outlet property="syncDataButton" destination="Lak-oQ-OUp" id="sr5-HM-1wY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kFN-rl-30n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1555" y="-3"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="mars" width="256" height="256"/>
+        <image name="rover" width="249" height="249"/>
+    </resources>
+</document>
