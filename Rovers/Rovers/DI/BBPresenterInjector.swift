@@ -13,8 +13,9 @@ class BBPresenterInjector
     static func createRoversPhotosViewControllerPresenter(manifests: [BBRoverManifestModel]) -> BBRoverPhotosPresenter
     {
         let photosInteractor = BBInteractorsInjector.createGetRoverPhotosInteractor()
+        let dateFilterInteractor = BBInteractorsInjector.createGetDateFiltersInteractor()
 
-        return BBRoverPhotosPresenter(photosInteractor, roversManifests: manifests)
+        return BBRoverPhotosPresenter(photosInteractor, dateFiltersInteractor: dateFilterInteractor, roversManifests: manifests)
     }
 
     static func createPhotoViewerControllerPResenter(photo: BBPhotoModel) -> BBPhotoViewerPresenter

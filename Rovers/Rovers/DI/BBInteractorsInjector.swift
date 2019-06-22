@@ -13,12 +13,17 @@ class BBInteractorsInjector
     static func createGetManifestsInteractor() -> BBGetRoverManifest
     {
         let manifestNetworking = BBDataInjector.createManifestsNetwork()
-        return BBGetRoverManifest(roverManifestNetworking: manifestNetworking)
+        return BBGetRoverManifest(roverManifestNetworking: manifestNetworking, queue: BBQueues.interactorsQueue)
     }
 
     static func createGetRoverPhotosInteractor() -> BBGetRoverPhotos
     {
         let photosNetworking = BBDataInjector.createRoverPhotosNetwork()
-        return BBGetRoverPhotos(roverPhotosNetworking: photosNetworking)
+        return BBGetRoverPhotos(roverPhotosNetworking: photosNetworking, queue: BBQueues.interactorsQueue)
+    }
+
+    static func createGetDateFiltersInteractor() -> BBCreateDateFilterInteractor
+    {
+        return BBCreateDateFilterInteractor(queue: BBQueues.interactorsQueue)
     }
 }

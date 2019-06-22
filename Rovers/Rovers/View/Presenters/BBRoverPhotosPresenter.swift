@@ -16,9 +16,14 @@ class BBRoverPhotosPresenter
     private let _getRoverPhotosInteractor: BBGetRoverPhotos
     private var _displayingPhotos: [BBPhotoModel] = [BBPhotoModel]()
     private let _roversManifests: [BBRoverManifestModel]
+    private let _createDateFiltersInteractor: BBCreateDateFilterInteractor
+    private let _mainQueue = DispatchQueue.main
 
-    init(_ roverPhotosInteractor: BBGetRoverPhotos, roversManifests: [BBRoverManifestModel])
+    init(_ roverPhotosInteractor: BBGetRoverPhotos,
+         dateFiltersInteractor: BBCreateDateFilterInteractor,
+         roversManifests: [BBRoverManifestModel])
     {
+        self._createDateFiltersInteractor = dateFiltersInteractor
         self._getRoverPhotosInteractor = roverPhotosInteractor
         self._roversManifests = roversManifests
     }
@@ -31,13 +36,21 @@ class BBRoverPhotosPresenter
 
     func filterByDateTapped()
     {
+        view?.showProgress()
         let currentRover = _roversAvailable[_currentSelectedIndex]
         if let roverManifest = _roversManifests.first (where: { $0.name == currentRover }) {
-            let dates = roverManifest.photos.reduce([], {
-                $0.contains($1) ? $0 : $0 + [$1] })
-            let datesAsFilters = dates.compactMap { BBDateFilter(serverDate: $0.earthDate) }
-
-            BBNavigator.navigateToFilterByDate(dates: datesAsFilters, delegate: self, from: view!)
+            _createDateFiltersInteractor.get(roverManifest: roverManifest) { [weak self] dateFilters in
+                self?._mainQueue.async {
+                    if let selfBlocked = self {
+                        selfBlocked.view?.hideProgress(.dismiss)
+                        if dateFilters.count > 0 {
+                            BBNavigator.navigateToFilterByDate(dates: dateFilters, delegate: selfBlocked, from: selfBlocked.view!)
+                        } else {
+                            selfBlocked.view?.showNoFiltersAvailableError()
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -74,7 +87,7 @@ class BBRoverPhotosPresenter
                             selfBlocked._displayingPhotos.append(contentsOf: pWrapped)
                         }
 
-                        DispatchQueue.main.sync {
+                        selfBlocked._mainQueue.sync {
                             selfBlocked.view?.show(photos: selfBlocked._displayingPhotos)
                             selfBlocked.view?.reloadData()
                         }

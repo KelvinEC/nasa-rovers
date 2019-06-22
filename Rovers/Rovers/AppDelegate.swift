@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         self.window = UIWindow(frame: frame)
 
         self.window?.rootViewController = BBWireframe.createOnboardingPageViewController()
-//        self.window?.rootViewController = BBWireframe.createNavigationController(BBWireframe.createRoverPhotoList())
         self.window?.makeKeyAndVisible()
 
         return true
