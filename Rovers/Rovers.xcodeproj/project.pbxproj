@@ -33,6 +33,8 @@
 		3891C6D022BBEBC900C1C394 /* BBRoversNameNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6CF22BBEBC900C1C394 /* BBRoversNameNetwork.swift */; };
 		3891C6D422BBED7D00C1C394 /* BBCameraMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6D322BBED7D00C1C394 /* BBCameraMetadata.swift */; };
 		3891C6D622BBEE3B00C1C394 /* BBRoverPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6D522BBEE3B00C1C394 /* BBRoverPhotos.swift */; };
+		38B6340E22BE62790007ACFA /* BBSyncDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B6340D22BE62790007ACFA /* BBSyncDataPresenter.swift */; };
+		38B6341022BE65340007ACFA /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B6340F22BE65340007ACFA /* SVProgressHUD.framework */; };
 		38BD054D22BD90EC00DEC889 /* BBWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD054C22BD90EC00DEC889 /* BBWireframe.swift */; };
 		38BD054F22BD90F500DEC889 /* BBNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD054E22BD90F500DEC889 /* BBNavigator.swift */; };
 		38BD055222BD91D100DEC889 /* BBAppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD055122BD91D100DEC889 /* BBAppStoryboard.swift */; };
@@ -42,6 +44,10 @@
 		38BD055A22BD93F800DEC889 /* BBDataInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD055922BD93F800DEC889 /* BBDataInjector.swift */; };
 		38BD055C22BDC67500DEC889 /* BBPhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD055B22BDC67500DEC889 /* BBPhotoViewerViewController.swift */; };
 		38BD055E22BDD94100DEC889 /* BBPhotoViewerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD055D22BDD94100DEC889 /* BBPhotoViewerPresenter.swift */; };
+		38BD056222BDE31500DEC889 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38BD056122BDE31500DEC889 /* Onboarding.storyboard */; };
+		38BD056622BDF25600DEC889 /* BBOnboardingPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD056522BDF25600DEC889 /* BBOnboardingPagerViewController.swift */; };
+		38BD056822BDF3DF00DEC889 /* BBWelcomeOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD056722BDF3DF00DEC889 /* BBWelcomeOnboardingViewController.swift */; };
+		38BD056A22BDF3FA00DEC889 /* BBSyncDataOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD056922BDF3FA00DEC889 /* BBSyncDataOnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +101,8 @@
 		3891C6CF22BBEBC900C1C394 /* BBRoversNameNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBRoversNameNetwork.swift; sourceTree = "<group>"; };
 		3891C6D322BBED7D00C1C394 /* BBCameraMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBCameraMetadata.swift; sourceTree = "<group>"; };
 		3891C6D522BBEE3B00C1C394 /* BBRoverPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBRoverPhotos.swift; sourceTree = "<group>"; };
+		38B6340D22BE62790007ACFA /* BBSyncDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSyncDataPresenter.swift; sourceTree = "<group>"; };
+		38B6340F22BE65340007ACFA /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		38BD054C22BD90EC00DEC889 /* BBWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBWireframe.swift; sourceTree = "<group>"; };
 		38BD054E22BD90F500DEC889 /* BBNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBNavigator.swift; sourceTree = "<group>"; };
 		38BD055122BD91D100DEC889 /* BBAppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBAppStoryboard.swift; sourceTree = "<group>"; };
@@ -104,6 +112,10 @@
 		38BD055922BD93F800DEC889 /* BBDataInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBDataInjector.swift; sourceTree = "<group>"; };
 		38BD055B22BDC67500DEC889 /* BBPhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBPhotoViewerViewController.swift; sourceTree = "<group>"; };
 		38BD055D22BDD94100DEC889 /* BBPhotoViewerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBPhotoViewerPresenter.swift; sourceTree = "<group>"; };
+		38BD056122BDE31500DEC889 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		38BD056522BDF25600DEC889 /* BBOnboardingPagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBOnboardingPagerViewController.swift; sourceTree = "<group>"; };
+		38BD056722BDF3DF00DEC889 /* BBWelcomeOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBWelcomeOnboardingViewController.swift; sourceTree = "<group>"; };
+		38BD056922BDF3FA00DEC889 /* BBSyncDataOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSyncDataOnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B6341022BE65340007ACFA /* SVProgressHUD.framework in Frameworks */,
 				386C87B922BC802B0002FB67 /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +166,7 @@
 		386C87B322BC7F330002FB67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38B6340F22BE65340007ACFA /* SVProgressHUD.framework */,
 				386C87B722BC80090002FB67 /* Kingfisher.framework */,
 				386C87B422BC7F340002FB67 /* Kingfisher.framework */,
 			);
@@ -202,6 +216,7 @@
 				3891C68B22BBCB6E00C1C394 /* LaunchScreen.storyboard */,
 				3891C68E22BBCB6E00C1C394 /* Info.plist */,
 				3891C68622BBCB6D00C1C394 /* Rovers.xcdatamodeld */,
+				38BD056122BDE31500DEC889 /* Onboarding.storyboard */,
 			);
 			path = Rovers;
 			sourceTree = "<group>";
@@ -302,6 +317,7 @@
 		3891C6B822BBCBBC00C1C394 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				38BD056422BDF22F00DEC889 /* Onboarding */,
 				3891C68122BBCB6D00C1C394 /* BBRoverPhotosViewController.swift */,
 				38BD055B22BDC67500DEC889 /* BBPhotoViewerViewController.swift */,
 			);
@@ -313,6 +329,7 @@
 			children = (
 				386C87C122BC8A620002FB67 /* BBRoverPhotosPresenter.swift */,
 				38BD055D22BDD94100DEC889 /* BBPhotoViewerPresenter.swift */,
+				38B6340D22BE62790007ACFA /* BBSyncDataPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -354,6 +371,16 @@
 				38BD055122BD91D100DEC889 /* BBAppStoryboard.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		38BD056422BDF22F00DEC889 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				38BD056522BDF25600DEC889 /* BBOnboardingPagerViewController.swift */,
+				38BD056722BDF3DF00DEC889 /* BBWelcomeOnboardingViewController.swift */,
+				38BD056922BDF3FA00DEC889 /* BBSyncDataOnboardingViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3891C68D22BBCB6E00C1C394 /* LaunchScreen.storyboard in Resources */,
+				38BD056222BDE31500DEC889 /* Onboarding.storyboard in Resources */,
 				3891C68A22BBCB6E00C1C394 /* Assets.xcassets in Resources */,
 				3891C68522BBCB6D00C1C394 /* Main.storyboard in Resources */,
 				386C87BB22BC80630002FB67 /* BBPhotoCollectionViewCell.xib in Resources */,
@@ -495,11 +523,13 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SVProgressHUD.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,8 +546,11 @@
 				385BD6FD22BC63940072042D /* BBGetRoverPhotos.swift in Sources */,
 				3891C6D422BBED7D00C1C394 /* BBCameraMetadata.swift in Sources */,
 				3891C6BE22BBDB7F00C1C394 /* BBNetwork.swift in Sources */,
+				38BD056622BDF25600DEC889 /* BBOnboardingPagerViewController.swift in Sources */,
+				38BD056822BDF3DF00DEC889 /* BBWelcomeOnboardingViewController.swift in Sources */,
 				38BD055E22BDD94100DEC889 /* BBPhotoViewerPresenter.swift in Sources */,
 				3891C6C022BBDCB600C1C394 /* BBConnectionTest.swift in Sources */,
+				38B6340E22BE62790007ACFA /* BBSyncDataPresenter.swift in Sources */,
 				386C87C022BC82530002FB67 /* UIImageViewExtensions.swift in Sources */,
 				38BD055822BD93BF00DEC889 /* BBInteractorsInjector.swift in Sources */,
 				385BD6FB22BC611D0072042D /* BBGetRoverManifest.swift in Sources */,
@@ -532,6 +565,7 @@
 				38BD055A22BD93F800DEC889 /* BBDataInjector.swift in Sources */,
 				3891C6C222BBDDED00C1C394 /* BBNetworkError.swift in Sources */,
 				3891C6CE22BBEB6800C1C394 /* BBRoverName.swift in Sources */,
+				38BD056A22BDF3FA00DEC889 /* BBSyncDataOnboardingViewController.swift in Sources */,
 				386C87C222BC8A620002FB67 /* BBRoverPhotosPresenter.swift in Sources */,
 				3891C68022BBCB6D00C1C394 /* AppDelegate.swift in Sources */,
 				38BD055C22BDC67500DEC889 /* BBPhotoViewerViewController.swift in Sources */,
@@ -715,8 +749,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = H77C86KK5Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

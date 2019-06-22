@@ -19,6 +19,7 @@ enum BBCameraShortNameModel: String, Codable
     case NAVCAM
     case PANCAM
     case MINITES
+    case ENTRY
 }
 
 struct BBCameraModel: Codable
