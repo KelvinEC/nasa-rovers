@@ -174,7 +174,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhH-2J-8AT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2115.9420289855075" y="-561.16071428571422"/>
+            <point key="canvasLocation" x="2230" y="-834"/>
+        </scene>
+        <!--Filter By Date View Controller-->
+        <scene sceneID="u7S-zy-dVt">
+            <objects>
+                <viewController storyboardIdentifier="BBFilterByDateViewController_ID" id="Tvr-be-Rx1" customClass="BBFilterByDateViewController" customModule="Rovers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s2v-9S-lGO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z24-iP-Lg7">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Z24-iP-Lg7" firstAttribute="leading" secondItem="Kab-8a-IPx" secondAttribute="leading" id="8Ie-xS-cUN"/>
+                            <constraint firstItem="Kab-8a-IPx" firstAttribute="bottom" secondItem="Z24-iP-Lg7" secondAttribute="bottom" id="LHo-y9-evW"/>
+                            <constraint firstItem="Z24-iP-Lg7" firstAttribute="top" secondItem="Kab-8a-IPx" secondAttribute="top" id="WVw-hZ-EhO"/>
+                            <constraint firstItem="Z24-iP-Lg7" firstAttribute="trailing" secondItem="Kab-8a-IPx" secondAttribute="trailing" id="dWA-41-uZB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kab-8a-IPx"/>
+                    </view>
+                    <connections>
+                        <outlet property="datesTableView" destination="Z24-iP-Lg7" id="4mq-rI-NMm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x7Q-s1-xkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2228.985507246377" y="-111.16071428571428"/>
         </scene>
     </scenes>
 </document>

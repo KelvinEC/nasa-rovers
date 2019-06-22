@@ -60,4 +60,15 @@ class BBWireframe
 
         return vc
     }
+
+    static func createFilterByDateController(_ dates: [BBDateFilter], delegate: BBFilterByDateProtocol) -> BBFilterByDateViewController
+    {
+        let vc = BBFilterByDateViewController.instantiateFromAppStoryboard(.Main)
+        let eventHandler = BBPresenterInjector.createFilterByDatePresenter(dates, delegate: delegate)
+
+        vc.eventHandler = eventHandler
+        eventHandler.view = vc
+
+        return vc
+    }
 }
