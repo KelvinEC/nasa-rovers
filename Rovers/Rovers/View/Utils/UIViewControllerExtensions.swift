@@ -45,4 +45,26 @@ extension UIViewController
             SVProgressHUD.dismiss()
         }
     }
+
+    func showError(title: String, description: String)
+    {
+        let controller = UIAlertController(title: title,
+                                           message: description, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .cancel, handler: nil)
+
+        controller.addAction(okAction)
+
+        present(controller, animated: true, completion: nil)
+    }
+
+    func showNoInternetConnectionError()
+    {
+        showError(title: NSLocalizedString("Error", comment: ""),
+                  description: NSLocalizedString("Your internet connection appears to be offline. :/", comment: ""))
+    }
+
+    func showUnknownError()
+    {
+        showError(title: NSLocalizedString("Error", comment: ""), description: NSLocalizedString("The martians attacked us and result in an unexpected behaviour. :/ \nTry again!", comment: ""))
+    }
 }
