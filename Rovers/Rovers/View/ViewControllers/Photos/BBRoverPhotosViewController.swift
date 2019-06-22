@@ -81,6 +81,16 @@ class BBRoverPhotosViewController: UIViewController
     {
         self.roverPhotosCollectionView.reloadData()
     }
+
+    func showNoFiltersAvailableError()
+    {
+        let controller = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("Theres no filter availables for this Rover", comment: ""), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .cancel, handler: nil)
+
+        controller.addAction(okAction)
+
+        present(controller, animated: true, completion: nil)
+    }
 }
 
 extension BBRoverPhotosViewController: UICollectionViewDataSource

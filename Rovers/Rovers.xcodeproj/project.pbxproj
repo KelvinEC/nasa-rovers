@@ -34,6 +34,8 @@
 		3891C6D022BBEBC900C1C394 /* BBRoversNameNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6CF22BBEBC900C1C394 /* BBRoversNameNetwork.swift */; };
 		3891C6D422BBED7D00C1C394 /* BBCameraMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6D322BBED7D00C1C394 /* BBCameraMetadata.swift */; };
 		3891C6D622BBEE3B00C1C394 /* BBRoverPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6D522BBEE3B00C1C394 /* BBRoverPhotos.swift */; };
+		38ABFFEA22BEB61F0096E563 /* BBQueues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABFFE922BEB61F0096E563 /* BBQueues.swift */; };
+		38ABFFEC22BEB8D50096E563 /* BBCreateDateFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABFFEB22BEB8D50096E563 /* BBCreateDateFilterInteractor.swift */; };
 		38B6340E22BE62790007ACFA /* BBSyncDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B6340D22BE62790007ACFA /* BBSyncDataPresenter.swift */; };
 		38B6341022BE65340007ACFA /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B6340F22BE65340007ACFA /* SVProgressHUD.framework */; };
 		38B6341322BE74980007ACFA /* BBFilterByDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B6341222BE74980007ACFA /* BBFilterByDateViewController.swift */; };
@@ -107,6 +109,8 @@
 		3891C6CF22BBEBC900C1C394 /* BBRoversNameNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBRoversNameNetwork.swift; sourceTree = "<group>"; };
 		3891C6D322BBED7D00C1C394 /* BBCameraMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBCameraMetadata.swift; sourceTree = "<group>"; };
 		3891C6D522BBEE3B00C1C394 /* BBRoverPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBRoverPhotos.swift; sourceTree = "<group>"; };
+		38ABFFE922BEB61F0096E563 /* BBQueues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBQueues.swift; sourceTree = "<group>"; };
+		38ABFFEB22BEB8D50096E563 /* BBCreateDateFilterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBCreateDateFilterInteractor.swift; sourceTree = "<group>"; };
 		38B6340D22BE62790007ACFA /* BBSyncDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSyncDataPresenter.swift; sourceTree = "<group>"; };
 		38B6340F22BE65340007ACFA /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		38B6341222BE74980007ACFA /* BBFilterByDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBFilterByDateViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +270,7 @@
 				38BD055522BD939600DEC889 /* BBPresenterInjector.swift */,
 				38BD055722BD93BF00DEC889 /* BBInteractorsInjector.swift */,
 				38BD055922BD93F800DEC889 /* BBDataInjector.swift */,
+				38ABFFE922BEB61F0096E563 /* BBQueues.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -371,6 +376,7 @@
 			children = (
 				385BD6FA22BC611D0072042D /* BBGetRoverManifest.swift */,
 				385BD6FC22BC63940072042D /* BBGetRoverPhotos.swift */,
+				38ABFFEB22BEB8D50096E563 /* BBCreateDateFilterInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -602,9 +608,11 @@
 				38B6341722BE79E70007ACFA /* BBDateFormatters.swift in Sources */,
 				38BD055622BD939600DEC889 /* BBPresenterInjector.swift in Sources */,
 				38BD054F22BD90F500DEC889 /* BBNavigator.swift in Sources */,
+				38ABFFEC22BEB8D50096E563 /* BBCreateDateFilterInteractor.swift in Sources */,
 				38BD054D22BD90EC00DEC889 /* BBWireframe.swift in Sources */,
 				3891C6C622BBE43500C1C394 /* BBPhotosMetadata.swift in Sources */,
 				3891C6D022BBEBC900C1C394 /* BBRoversNameNetwork.swift in Sources */,
+				38ABFFEA22BEB61F0096E563 /* BBQueues.swift in Sources */,
 				38BD055222BD91D100DEC889 /* BBAppStoryboard.swift in Sources */,
 				386C87BE22BC80840002FB67 /* BBPhotoCollectionViewCell.swift in Sources */,
 				3891C68222BBCB6D00C1C394 /* BBRoverPhotosViewController.swift in Sources */,
