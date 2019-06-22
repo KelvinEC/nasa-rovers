@@ -44,7 +44,9 @@ class BBRoverPhotosPresenter
                     if let selfBlocked = self {
                         selfBlocked.view?.hideProgress(.dismiss)
                         if dateFilters.count > 0 {
-                            BBNavigator.navigateToFilterByDate(dates: dateFilters, delegate: selfBlocked, from: selfBlocked.view!)
+                            BBNavigator.navigateToFilterByDate(dates: dateFilters,
+                                                               delegate: selfBlocked,
+                                                               from: selfBlocked.view!)
                         } else {
                             selfBlocked.view?.showNoFiltersAvailableError()
                         }
@@ -78,22 +80,27 @@ class BBRoverPhotosPresenter
     func getPhotos(for rover: BBRoverNameModel, date: String)
     {
         _getRoverPhotosInteractor.get(for: rover, date: date) { [weak self] result in
-            switch result {
-            case .success(let photos):
-                if let selfBlocked = self {
-                    if rover == selfBlocked._roversAvailable[selfBlocked._currentSelectedIndex] {
-                        selfBlocked._displayingPhotos.removeAll()
-                        if let pWrapped = photos {
-                            selfBlocked._displayingPhotos.append(contentsOf: pWrapped)
-                        }
-
-                        selfBlocked._mainQueue.sync {
+            if let selfBlocked = self {
+                selfBlocked._mainQueue.sync {
+                    switch result {
+                    case .success(let photos):
+                        if rover == selfBlocked._roversAvailable[selfBlocked._currentSelectedIndex] {
+                            selfBlocked._displayingPhotos.removeAll()
+                            if let pWrapped = photos {
+                                selfBlocked._displayingPhotos.append(contentsOf: pWrapped)
+                            }
                             selfBlocked.view?.show(photos: selfBlocked._displayingPhotos)
                             selfBlocked.view?.reloadData()
                         }
+                    case .failure(let err):
+                        switch err {
+                        case BBNetworkError.noInternetConnection:
+                            self?.view?.showNoInternetConnectionError()
+                        default:
+                            self?.view?.showUnknownError()
+                        }
                     }
                 }
-            case .failure(let err): print(err)
             }
         }
     }

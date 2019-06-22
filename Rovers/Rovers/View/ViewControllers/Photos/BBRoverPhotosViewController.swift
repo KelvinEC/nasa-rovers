@@ -84,12 +84,8 @@ class BBRoverPhotosViewController: UIViewController
 
     func showNoFiltersAvailableError()
     {
-        let controller = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("Theres no filter availables for this Rover", comment: ""), preferredStyle: .alert)
-        let okAction = UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .cancel, handler: nil)
-
-        controller.addAction(okAction)
-
-        present(controller, animated: true, completion: nil)
+        showError(title: NSLocalizedString("Error", comment: ""),
+                  description: NSLocalizedString("Theres no filter availables for this Rover :/", comment: ""))
     }
 }
 

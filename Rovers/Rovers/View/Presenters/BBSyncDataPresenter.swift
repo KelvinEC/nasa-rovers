@@ -22,8 +22,9 @@ class BBSyncDataPresenter
     
     func syncDataTapped()
     {
-        roversManifests.removeAll()
         view?.showProgress()
+
+        roversManifests.removeAll()
         BBRoverNameModel.allCases.forEach {
             getManifest(for: $0)
         }
@@ -32,23 +33,26 @@ class BBSyncDataPresenter
     private func getManifest(for rover: BBRoverNameModel)
     {
         _getManifestsInteractor.getManifest(for: rover) { [weak self] result in
-            switch result {
-            case .success(let manifest):
-                if let mWrapped = manifest {
-                    self?.roversManifests.append(mWrapped)
-
-                    if self?.roversManifests.count == BBRoverNameModel.allCases.count {
-                        DispatchQueue.main.sync {
+            DispatchQueue.main.sync {
+                switch result {
+                case .success(let manifest):
+                    if let mWrapped = manifest {
+                        self?.roversManifests.append(mWrapped)
+                        if self?.roversManifests.count == BBRoverNameModel.allCases.count {
                             self?.view?.hideProgress(.success)
                             self?.navigateToRoversPhotos()
                         }
+                    } else {
+                        self?.view?.showUnknownError()
                     }
-                } else {
-                    fallthrough
-                }
-            case .failure:
-                DispatchQueue.main.sync {
-                    self?.view?.hideProgress(.error)
+                case .failure(let err):
+                    self?.view?.hideProgress(.dismiss)
+                    switch err {
+                    case BBNetworkError.noInternetConnection:
+                        self?.view?.showNoInternetConnectionError()
+                    default:
+                        self?.view?.showUnknownError()
+                    }
                 }
             }
         }
