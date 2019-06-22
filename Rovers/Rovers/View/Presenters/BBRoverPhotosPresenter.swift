@@ -26,9 +26,18 @@ class BBRoverPhotosPresenter
     func viewDidLoad()
     {
         view?.show(rovers: _getRovers())
+        selectedRoverChanged(_currentSelectedIndex)
+    }
+
+    func filterByDateTapped()
+    {
         let currentRover = _roversAvailable[_currentSelectedIndex]
-        if let roverMaxDate = _roversManifests.first(where: {$0.name == currentRover})?.maxDate {
-            getPhotos(for: currentRover , date: roverMaxDate)
+        if let roverManifest = _roversManifests.first (where: { $0.name == currentRover }) {
+            let dates = roverManifest.photos.reduce([], {
+                $0.contains($1) ? $0 : $0 + [$1] })
+            let datesAsFilters = dates.compactMap { BBDateFilter(serverDate: $0.earthDate) }
+
+            BBNavigator.navigateToFilterByDate(dates: datesAsFilters, delegate: self, from: view!)
         }
     }
 
@@ -73,6 +82,19 @@ class BBRoverPhotosPresenter
                 }
             case .failure(let err): print(err)
             }
+        }
+    }
+}
+
+extension BBRoverPhotosPresenter: BBFilterByDateProtocol
+{
+    func selected(filter: String?)
+    {
+        if let date = filter {
+            self._displayingPhotos.removeAll()
+            self.view?.show(photos: self._displayingPhotos)
+            self.view?.reloadData()
+            getPhotos(for: _roversAvailable[_currentSelectedIndex], date: date)
         }
     }
 }

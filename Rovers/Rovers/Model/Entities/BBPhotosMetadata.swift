@@ -15,3 +15,10 @@ struct BBPhotosMetadataModel: Codable
     let totalPhotos: Int
     let cameras: [BBCameraShortNameModel]
 }
+
+extension BBPhotosMetadataModel: Equatable
+{
+    static func == (lhs: BBPhotosMetadataModel, rhs: BBPhotosMetadataModel) -> Bool {
+        return lhs.earthDate == rhs.earthDate
+    }
+}

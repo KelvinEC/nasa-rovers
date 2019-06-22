@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		384C8CE722BE90650083DD24 /* BBDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B6341D22BE8C660007ACFA /* BBDateTableViewCell.swift */; };
 		385BD6FB22BC611D0072042D /* BBGetRoverManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385BD6FA22BC611D0072042D /* BBGetRoverManifest.swift */; };
 		385BD6FD22BC63940072042D /* BBGetRoverPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385BD6FC22BC63940072042D /* BBGetRoverPhotos.swift */; };
 		385BD70122BC6A490072042D /* BBManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385BD70022BC6A490072042D /* BBManifests.swift */; };
@@ -35,6 +36,11 @@
 		3891C6D622BBEE3B00C1C394 /* BBRoverPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C6D522BBEE3B00C1C394 /* BBRoverPhotos.swift */; };
 		38B6340E22BE62790007ACFA /* BBSyncDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B6340D22BE62790007ACFA /* BBSyncDataPresenter.swift */; };
 		38B6341022BE65340007ACFA /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B6340F22BE65340007ACFA /* SVProgressHUD.framework */; };
+		38B6341322BE74980007ACFA /* BBFilterByDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B6341222BE74980007ACFA /* BBFilterByDateViewController.swift */; };
+		38B6341522BE788C0007ACFA /* BBFilterByDatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B6341422BE788C0007ACFA /* BBFilterByDatePresenter.swift */; };
+		38B6341722BE79E70007ACFA /* BBDateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B6341622BE79E70007ACFA /* BBDateFormatters.swift */; };
+		38B6341A22BE808C0007ACFA /* BBDateFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B6341922BE808C0007ACFA /* BBDateFilter.swift */; };
+		38B6341C22BE84010007ACFA /* BBDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38B6341B22BE84010007ACFA /* BBDateCell.xib */; };
 		38BD054D22BD90EC00DEC889 /* BBWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD054C22BD90EC00DEC889 /* BBWireframe.swift */; };
 		38BD054F22BD90F500DEC889 /* BBNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD054E22BD90F500DEC889 /* BBNavigator.swift */; };
 		38BD055222BD91D100DEC889 /* BBAppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD055122BD91D100DEC889 /* BBAppStoryboard.swift */; };
@@ -103,6 +109,12 @@
 		3891C6D522BBEE3B00C1C394 /* BBRoverPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBRoverPhotos.swift; sourceTree = "<group>"; };
 		38B6340D22BE62790007ACFA /* BBSyncDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSyncDataPresenter.swift; sourceTree = "<group>"; };
 		38B6340F22BE65340007ACFA /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		38B6341222BE74980007ACFA /* BBFilterByDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBFilterByDateViewController.swift; sourceTree = "<group>"; };
+		38B6341422BE788C0007ACFA /* BBFilterByDatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBFilterByDatePresenter.swift; sourceTree = "<group>"; };
+		38B6341622BE79E70007ACFA /* BBDateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBDateFormatters.swift; sourceTree = "<group>"; };
+		38B6341922BE808C0007ACFA /* BBDateFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBDateFilter.swift; sourceTree = "<group>"; };
+		38B6341B22BE84010007ACFA /* BBDateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BBDateCell.xib; sourceTree = "<group>"; };
+		38B6341D22BE8C660007ACFA /* BBDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBDateTableViewCell.swift; sourceTree = "<group>"; };
 		38BD054C22BD90EC00DEC889 /* BBWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBWireframe.swift; sourceTree = "<group>"; };
 		38BD054E22BD90F500DEC889 /* BBNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBNavigator.swift; sourceTree = "<group>"; };
 		38BD055122BD91D100DEC889 /* BBAppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBAppStoryboard.swift; sourceTree = "<group>"; };
@@ -145,6 +157,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		384C8CE622BE8FC30083DD24 /* BBDateTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				38B6341B22BE84010007ACFA /* BBDateCell.xib */,
+				38B6341D22BE8C660007ACFA /* BBDateTableViewCell.swift */,
+			);
+			path = BBDateTableViewCell;
+			sourceTree = "<group>";
+		};
 		385BD6FE22BC66FD0072042D /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +283,7 @@
 		3891C6B222BBCB8F00C1C394 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				38B6341822BE807E0007ACFA /* Models */,
 				3891C6B422BBCB9A00C1C394 /* Utils */,
 				38BD055022BD90F900DEC889 /* Navigation */,
 				3891C6BA22BBCBC600C1C394 /* Custom */,
@@ -285,6 +307,7 @@
 			children = (
 				386C87BF22BC82530002FB67 /* UIImageViewExtensions.swift */,
 				38BD055322BD921800DEC889 /* UIViewControllerExtensions.swift */,
+				38B6341622BE79E70007ACFA /* BBDateFormatters.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -317,9 +340,8 @@
 		3891C6B822BBCBBC00C1C394 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				38B6341122BE74620007ACFA /* Photos */,
 				38BD056422BDF22F00DEC889 /* Onboarding */,
-				3891C68122BBCB6D00C1C394 /* BBRoverPhotosViewController.swift */,
-				38BD055B22BDC67500DEC889 /* BBPhotoViewerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -330,6 +352,7 @@
 				386C87C122BC8A620002FB67 /* BBRoverPhotosPresenter.swift */,
 				38BD055D22BDD94100DEC889 /* BBPhotoViewerPresenter.swift */,
 				38B6340D22BE62790007ACFA /* BBSyncDataPresenter.swift */,
+				38B6341422BE788C0007ACFA /* BBFilterByDatePresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -337,6 +360,7 @@
 		3891C6BA22BBCBC600C1C394 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				384C8CE622BE8FC30083DD24 /* BBDateTableViewCell */,
 				386C87BC22BC80690002FB67 /* BBPhotoCollectionViewCell */,
 			);
 			path = Custom;
@@ -361,6 +385,24 @@
 				3891C6D522BBEE3B00C1C394 /* BBRoverPhotos.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		38B6341122BE74620007ACFA /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				3891C68122BBCB6D00C1C394 /* BBRoverPhotosViewController.swift */,
+				38BD055B22BDC67500DEC889 /* BBPhotoViewerViewController.swift */,
+				38B6341222BE74980007ACFA /* BBFilterByDateViewController.swift */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		38B6341822BE807E0007ACFA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				38B6341922BE808C0007ACFA /* BBDateFilter.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		38BD055022BD90F900DEC889 /* Navigation */ = {
@@ -490,6 +532,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3891C68D22BBCB6E00C1C394 /* LaunchScreen.storyboard in Resources */,
+				38B6341C22BE84010007ACFA /* BBDateCell.xib in Resources */,
 				38BD056222BDE31500DEC889 /* Onboarding.storyboard in Resources */,
 				3891C68A22BBCB6E00C1C394 /* Assets.xcassets in Resources */,
 				3891C68522BBCB6D00C1C394 /* Main.storyboard in Resources */,
@@ -543,6 +586,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384C8CE722BE90650083DD24 /* BBDateTableViewCell.swift in Sources */,
 				385BD6FD22BC63940072042D /* BBGetRoverPhotos.swift in Sources */,
 				3891C6D422BBED7D00C1C394 /* BBCameraMetadata.swift in Sources */,
 				3891C6BE22BBDB7F00C1C394 /* BBNetwork.swift in Sources */,
@@ -550,10 +594,12 @@
 				38BD056822BDF3DF00DEC889 /* BBWelcomeOnboardingViewController.swift in Sources */,
 				38BD055E22BDD94100DEC889 /* BBPhotoViewerPresenter.swift in Sources */,
 				3891C6C022BBDCB600C1C394 /* BBConnectionTest.swift in Sources */,
+				38B6341322BE74980007ACFA /* BBFilterByDateViewController.swift in Sources */,
 				38B6340E22BE62790007ACFA /* BBSyncDataPresenter.swift in Sources */,
 				386C87C022BC82530002FB67 /* UIImageViewExtensions.swift in Sources */,
 				38BD055822BD93BF00DEC889 /* BBInteractorsInjector.swift in Sources */,
 				385BD6FB22BC611D0072042D /* BBGetRoverManifest.swift in Sources */,
+				38B6341722BE79E70007ACFA /* BBDateFormatters.swift in Sources */,
 				38BD055622BD939600DEC889 /* BBPresenterInjector.swift in Sources */,
 				38BD054F22BD90F500DEC889 /* BBNavigator.swift in Sources */,
 				38BD054D22BD90EC00DEC889 /* BBWireframe.swift in Sources */,
@@ -566,7 +612,9 @@
 				3891C6C222BBDDED00C1C394 /* BBNetworkError.swift in Sources */,
 				3891C6CE22BBEB6800C1C394 /* BBRoverName.swift in Sources */,
 				38BD056A22BDF3FA00DEC889 /* BBSyncDataOnboardingViewController.swift in Sources */,
+				38B6341A22BE808C0007ACFA /* BBDateFilter.swift in Sources */,
 				386C87C222BC8A620002FB67 /* BBRoverPhotosPresenter.swift in Sources */,
+				38B6341522BE788C0007ACFA /* BBFilterByDatePresenter.swift in Sources */,
 				3891C68022BBCB6D00C1C394 /* AppDelegate.swift in Sources */,
 				38BD055C22BDC67500DEC889 /* BBPhotoViewerViewController.swift in Sources */,
 				385BD70122BC6A490072042D /* BBManifests.swift in Sources */,

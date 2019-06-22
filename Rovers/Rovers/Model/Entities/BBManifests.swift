@@ -22,5 +22,5 @@ struct BBRoverManifestModel: Codable
     let maxSol: Int
     let maxDate: String
     let totalPhotos: Int
-    let photos: [BBPhotosMetadataModel]
+    var photos: [BBPhotosMetadataModel]
 }

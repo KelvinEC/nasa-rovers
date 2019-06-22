@@ -28,4 +28,9 @@ class BBPresenterInjector
 
         return BBSyncDataPresenter(manifestsInteractor)
     }
+
+    static func createFilterByDatePresenter(_ dates: [BBDateFilter], delegate: BBFilterByDateProtocol) -> BBFilterByDatePresenter
+    {
+        return BBFilterByDatePresenter(dates, delegate: delegate)
+    }
 }
