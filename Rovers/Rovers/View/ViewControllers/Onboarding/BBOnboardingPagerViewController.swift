@@ -18,6 +18,7 @@ class BBOnboardingPagerViewController: UIPageViewController
         self.dataSource = self
         self.view.backgroundColor = UIColor.white
         self.setViewControllers([pages[0]], direction: .forward, animated: true, completion: nil)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 }
 

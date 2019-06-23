@@ -19,13 +19,18 @@ class BBFilterByDateViewController: UIViewController
     private var _selectedDate: String?
 
     var eventHandler: BBFilterByDatePresenter!
+
     // MARK: - View Methods
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
         let searchController = UISearchController(searchResultsController: nil)
+        self.navigationItem.title = "Filter By Earth Date"
 
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+        }
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = NSLocalizedString("Search", comment: "")
@@ -38,9 +43,10 @@ class BBFilterByDateViewController: UIViewController
         datesTableView.delegate = self
         datesTableView.dataSource = self
 
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Apply", comment: ""), style: .plain, target: self, action: #selector(applyTapped))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Reset", comment: ""), style: .plain, target: self, action: #selector(resetTapped))
 
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Reset", comment: ""), style: .plain, target: self, action: #selector(resetTapped))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Apply", comment: ""), style: .plain, target: self, action: #selector(applyTapped))
+
         eventHandler.viewDidLoad()
     }
 
@@ -50,13 +56,14 @@ class BBFilterByDateViewController: UIViewController
         eventHandler.applyTapped()
     }
 
-    // MARK: - IBActions
     @objc func resetTapped()
     {
         eventHandler.resetTapped()
     }
+}
 
-    // MARK: - View Protocol Methods
+extension BBFilterByDateViewController: BBFilterByDateViewProtocol
+{
     func show(dates: [String], selected: String?)
     {
         _selectedDate = selected
@@ -113,14 +120,17 @@ extension BBFilterByDateViewController: UITableViewDataSource
             cell.dateLabel.text = _dates[indexPath.row]
             cell.selectionStyle = .none
 
-            if let sel = _selectedDate, sel == _dates[indexPath.row] {
-                cell.setSelected(true, animated: false)
-            }
-
             return cell
         }
 
         return UITableViewCell()
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
+    {
+        if let sel = _selectedDate, sel == _dates[indexPath.row] {
+            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }
     }
 }
 

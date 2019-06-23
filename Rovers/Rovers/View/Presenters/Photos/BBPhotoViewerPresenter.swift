@@ -10,8 +10,8 @@ import Foundation
 
 class BBPhotoViewerPresenter
 {
+    weak var view: BBPhotoViewerProtocol?
     let photo: BBPhotoModel
-    weak var view: BBPhotoViewerViewController?
     private var showingFullName: Bool = false
 
     init(photo: BBPhotoModel)

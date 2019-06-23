@@ -15,14 +15,17 @@ protocol BBFilterByDateProtocol: AnyObject
 
 class BBFilterByDatePresenter
 {
-    weak var view: BBFilterByDateViewController?
+    weak var view: BBFilterByDateViewProtocol?
     private weak var _delegate: BBFilterByDateProtocol?
     private var _datesAvailable: [BBDateFilter]
     private var _filteredDates: [BBDateFilter] = [BBDateFilter]()
     private var _selectedFilter: String?
 
-    init(_ datesAvailable: [BBDateFilter], delegate: BBFilterByDateProtocol)
+    init(_ datesAvailable: [BBDateFilter],
+         selectedValue: BBDateFilter,
+         delegate: BBFilterByDateProtocol)
     {
+        _selectedFilter = selectedValue.userDate
         _delegate = delegate
         _datesAvailable = datesAvailable
         _filteredDates.append(contentsOf: _datesAvailable)
