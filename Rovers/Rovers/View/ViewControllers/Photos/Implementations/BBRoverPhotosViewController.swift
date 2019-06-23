@@ -16,9 +16,6 @@ class BBRoverPhotosViewController: UIViewController
     @IBOutlet weak var roversSegmentedControl: UISegmentedControl!
     @IBOutlet weak var segmentedToolbar: UIToolbar!
 
-    // MARK: - Cell Identifiers
-    private let roverPhotosCellIdentifier = "BBPhotoCollectionViewCell"
-
     // MARK: - View Properties
     private var photos: [BBPhotoModel] = [BBPhotoModel]()
     var eventHandler: BBRoverPhotosPresenter!
@@ -27,6 +24,7 @@ class BBRoverPhotosViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationItem.title = "Mars Rovers Photos"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "calendar"), style: .plain, target: self, action: #selector(filterByDateTapped))
         if #available(iOS 11.0, *) {
@@ -37,16 +35,16 @@ class BBRoverPhotosViewController: UIViewController
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         self.segmentedToolbar.backgroundColor = UIColor.white
-
-        roverPhotosCollectionView.register(UINib(nibName: roverPhotosCellIdentifier, bundle: Bundle.main),
-                                           forCellWithReuseIdentifier: roverPhotosCellIdentifier)
+        self.segmentedToolbar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
+        roverPhotosCollectionView.register(UINib(nibName: BBRoverPhotosViewController.roverPhotosCellIdentifier,
+                                                 bundle: Bundle.main),
+                                           forCellWithReuseIdentifier: BBRoverPhotosViewController.roverPhotosCellIdentifier)
 
         roverPhotosCollectionView.delegate = self
         roverPhotosCollectionView.dataSource = self
         roverPhotosCollectionView.prefetchDataSource = self
 
         eventHandler.viewDidLoad()
-
     }
 
     // MARK: - IBActions
@@ -59,8 +57,10 @@ class BBRoverPhotosViewController: UIViewController
     {
         eventHandler.filterByDateTapped()
     }
-    
-    // MARK: - View Protocol Methods
+}
+
+extension BBRoverPhotosViewController: BBRoverPhotosViewProtocol
+{
     func show(rovers: [String])
     {
         roversSegmentedControl.removeAllSegments()
@@ -91,6 +91,8 @@ class BBRoverPhotosViewController: UIViewController
 
 extension BBRoverPhotosViewController: UICollectionViewDataSource
 {
+    static let roverPhotosCellIdentifier = "BBPhotoCollectionViewCell"
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         collectionView.deselectItem(at: indexPath, animated: true)
@@ -104,11 +106,11 @@ extension BBRoverPhotosViewController: UICollectionViewDataSource
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: roverPhotosCellIdentifier,
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BBRoverPhotosViewController.roverPhotosCellIdentifier,
                                                          for: indexPath) as? BBPhotoCollectionViewCell {
             let photo = photos[indexPath.row]
 
-            if let photoURL = URL(string: photo.imgSrc.replacingOccurrences(of: "http://", with: "https://")) {
+            if let photoURL = URL(string: photo.imgSrc) {
                 cell.imageView.setImage(with: photoURL, placeholder: nil)
             }
 
@@ -141,11 +143,11 @@ extension BBRoverPhotosViewController: UICollectionViewDataSourcePrefetching
         var urls: [URL] = [URL]()
 
         indexPaths.forEach { index in
-            if let url = URL(string: photos[index.row].imgSrc.replacingOccurrences(of: "http://", with: "https://")) {
+            if let url = URL(string: photos[index.row].imgSrc) {
                 urls.append(url)
             }
         }
 
-        ImagePrefetcher(urls: urls).start()
+        BBImageCache.prefetchImage(urls)
     }
 }

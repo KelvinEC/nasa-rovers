@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BBGetRoverManifest
+class BBGetRoverManifest: BBGetRoverManifestProtocol
 {
     private let roverManifestNetworking: BBManifestsNetworking
     private let _serverDateFormatter: DateFormatter

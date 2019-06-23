@@ -16,6 +16,17 @@
 		386C87BE22BC80840002FB67 /* BBPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C87BD22BC80840002FB67 /* BBPhotoCollectionViewCell.swift */; };
 		386C87C022BC82530002FB67 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C87BF22BC82530002FB67 /* UIImageViewExtensions.swift */; };
 		386C87C222BC8A620002FB67 /* BBRoverPhotosPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C87C122BC8A620002FB67 /* BBRoverPhotosPresenter.swift */; };
+		3871108122BED35200DF22B3 /* BBRoverPhotosViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3871108022BED35200DF22B3 /* BBRoverPhotosViewProtocol.swift */; };
+		3871108322BED4D000DF22B3 /* BBPhotoViewerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3871108222BED4D000DF22B3 /* BBPhotoViewerProtocol.swift */; };
+		3871108522BED54A00DF22B3 /* BBFilterByDateViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3871108422BED54A00DF22B3 /* BBFilterByDateViewProtocol.swift */; };
+		3871108A22BED6C500DF22B3 /* BBBaseViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3871108922BED6C500DF22B3 /* BBBaseViewProtocol.swift */; };
+		3871108C22BFBEB200DF22B3 /* BBCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3871108B22BFBEB200DF22B3 /* BBCoordinatorProtocol.swift */; };
+		3871108E22BFBF0700DF22B3 /* BBMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3871108D22BFBF0700DF22B3 /* BBMainCoordinator.swift */; };
+		3871109022BFC91A00DF22B3 /* BBMainCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3871108F22BFC91A00DF22B3 /* BBMainCoordinatorProtocol.swift */; };
+		3871109222BFD0C300DF22B3 /* BBImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3871109122BFD0C300DF22B3 /* BBImageCache.swift */; };
+		3871109522BFE22100DF22B3 /* BBGetRoverManifestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3871109422BFE22100DF22B3 /* BBGetRoverManifestProtocol.swift */; };
+		3871109722BFE24F00DF22B3 /* BBGetRoverPhotosProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3871109622BFE24F00DF22B3 /* BBGetRoverPhotosProtocol.swift */; };
+		3871109922BFE26D00DF22B3 /* BBCreateDateFiltersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3871109822BFE26D00DF22B3 /* BBCreateDateFiltersProtocol.swift */; };
 		3891C68022BBCB6D00C1C394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C67F22BBCB6D00C1C394 /* AppDelegate.swift */; };
 		3891C68222BBCB6D00C1C394 /* BBRoverPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891C68122BBCB6D00C1C394 /* BBRoverPhotosViewController.swift */; };
 		3891C68522BBCB6D00C1C394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891C68322BBCB6D00C1C394 /* Main.storyboard */; };
@@ -44,7 +55,6 @@
 		38B6341A22BE808C0007ACFA /* BBDateFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B6341922BE808C0007ACFA /* BBDateFilter.swift */; };
 		38B6341C22BE84010007ACFA /* BBDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38B6341B22BE84010007ACFA /* BBDateCell.xib */; };
 		38BD054D22BD90EC00DEC889 /* BBWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD054C22BD90EC00DEC889 /* BBWireframe.swift */; };
-		38BD054F22BD90F500DEC889 /* BBNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD054E22BD90F500DEC889 /* BBNavigator.swift */; };
 		38BD055222BD91D100DEC889 /* BBAppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD055122BD91D100DEC889 /* BBAppStoryboard.swift */; };
 		38BD055422BD921800DEC889 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD055322BD921800DEC889 /* UIViewControllerExtensions.swift */; };
 		38BD055622BD939600DEC889 /* BBPresenterInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD055522BD939600DEC889 /* BBPresenterInjector.swift */; };
@@ -85,6 +95,17 @@
 		386C87BD22BC80840002FB67 /* BBPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		386C87BF22BC82530002FB67 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		386C87C122BC8A620002FB67 /* BBRoverPhotosPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBRoverPhotosPresenter.swift; sourceTree = "<group>"; };
+		3871108022BED35200DF22B3 /* BBRoverPhotosViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBRoverPhotosViewProtocol.swift; sourceTree = "<group>"; };
+		3871108222BED4D000DF22B3 /* BBPhotoViewerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBPhotoViewerProtocol.swift; sourceTree = "<group>"; };
+		3871108422BED54A00DF22B3 /* BBFilterByDateViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBFilterByDateViewProtocol.swift; sourceTree = "<group>"; };
+		3871108922BED6C500DF22B3 /* BBBaseViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBBaseViewProtocol.swift; sourceTree = "<group>"; };
+		3871108B22BFBEB200DF22B3 /* BBCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		3871108D22BFBF0700DF22B3 /* BBMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBMainCoordinator.swift; sourceTree = "<group>"; };
+		3871108F22BFC91A00DF22B3 /* BBMainCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBMainCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		3871109122BFD0C300DF22B3 /* BBImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBImageCache.swift; sourceTree = "<group>"; };
+		3871109422BFE22100DF22B3 /* BBGetRoverManifestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBGetRoverManifestProtocol.swift; sourceTree = "<group>"; };
+		3871109622BFE24F00DF22B3 /* BBGetRoverPhotosProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBGetRoverPhotosProtocol.swift; sourceTree = "<group>"; };
+		3871109822BFE26D00DF22B3 /* BBCreateDateFiltersProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBCreateDateFiltersProtocol.swift; sourceTree = "<group>"; };
 		3891C67C22BBCB6D00C1C394 /* Rovers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rovers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3891C67F22BBCB6D00C1C394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3891C68122BBCB6D00C1C394 /* BBRoverPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBRoverPhotosViewController.swift; sourceTree = "<group>"; };
@@ -120,7 +141,6 @@
 		38B6341B22BE84010007ACFA /* BBDateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BBDateCell.xib; sourceTree = "<group>"; };
 		38B6341D22BE8C660007ACFA /* BBDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBDateTableViewCell.swift; sourceTree = "<group>"; };
 		38BD054C22BD90EC00DEC889 /* BBWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBWireframe.swift; sourceTree = "<group>"; };
-		38BD054E22BD90F500DEC889 /* BBNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBNavigator.swift; sourceTree = "<group>"; };
 		38BD055122BD91D100DEC889 /* BBAppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBAppStoryboard.swift; sourceTree = "<group>"; };
 		38BD055322BD921800DEC889 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		38BD055522BD939600DEC889 /* BBPresenterInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBPresenterInjector.swift; sourceTree = "<group>"; };
@@ -205,6 +225,64 @@
 				386C87BD22BC80840002FB67 /* BBPhotoCollectionViewCell.swift */,
 			);
 			path = BBPhotoCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		3871107F22BED30D00DF22B3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3871108022BED35200DF22B3 /* BBRoverPhotosViewProtocol.swift */,
+				3871108222BED4D000DF22B3 /* BBPhotoViewerProtocol.swift */,
+				3871108422BED54A00DF22B3 /* BBFilterByDateViewProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3871108622BED5CE00DF22B3 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				3891C68122BBCB6D00C1C394 /* BBRoverPhotosViewController.swift */,
+				38BD055B22BDC67500DEC889 /* BBPhotoViewerViewController.swift */,
+				38B6341222BE74980007ACFA /* BBFilterByDateViewController.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		3871108722BED68600DF22B3 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				386C87C122BC8A620002FB67 /* BBRoverPhotosPresenter.swift */,
+				38BD055D22BDD94100DEC889 /* BBPhotoViewerPresenter.swift */,
+				38B6341422BE788C0007ACFA /* BBFilterByDatePresenter.swift */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		3871108822BED69000DF22B3 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				38B6340D22BE62790007ACFA /* BBSyncDataPresenter.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		3871109322BFE20500DF22B3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3871109422BFE22100DF22B3 /* BBGetRoverManifestProtocol.swift */,
+				3871109622BFE24F00DF22B3 /* BBGetRoverPhotosProtocol.swift */,
+				3871109822BFE26D00DF22B3 /* BBCreateDateFiltersProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3871109A22BFE29500DF22B3 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				385BD6FA22BC611D0072042D /* BBGetRoverManifest.swift */,
+				385BD6FC22BC63940072042D /* BBGetRoverPhotos.swift */,
+				38ABFFEB22BEB8D50096E563 /* BBCreateDateFilterInteractor.swift */,
+			);
+			path = Implementations;
 			sourceTree = "<group>";
 		};
 		3891C67322BBCB6D00C1C394 = {
@@ -313,6 +391,7 @@
 				386C87BF22BC82530002FB67 /* UIImageViewExtensions.swift */,
 				38BD055322BD921800DEC889 /* UIViewControllerExtensions.swift */,
 				38B6341622BE79E70007ACFA /* BBDateFormatters.swift */,
+				3871109122BFD0C300DF22B3 /* BBImageCache.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -347,6 +426,7 @@
 			children = (
 				38B6341122BE74620007ACFA /* Photos */,
 				38BD056422BDF22F00DEC889 /* Onboarding */,
+				3871108922BED6C500DF22B3 /* BBBaseViewProtocol.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -354,10 +434,8 @@
 		3891C6B922BBCBC200C1C394 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				386C87C122BC8A620002FB67 /* BBRoverPhotosPresenter.swift */,
-				38BD055D22BDD94100DEC889 /* BBPhotoViewerPresenter.swift */,
-				38B6340D22BE62790007ACFA /* BBSyncDataPresenter.swift */,
-				38B6341422BE788C0007ACFA /* BBFilterByDatePresenter.swift */,
+				3871108822BED69000DF22B3 /* Onboarding */,
+				3871108722BED68600DF22B3 /* Photos */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -374,9 +452,8 @@
 		3891C6BB22BBCC6800C1C394 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
-				385BD6FA22BC611D0072042D /* BBGetRoverManifest.swift */,
-				385BD6FC22BC63940072042D /* BBGetRoverPhotos.swift */,
-				38ABFFEB22BEB8D50096E563 /* BBCreateDateFilterInteractor.swift */,
+				3871109A22BFE29500DF22B3 /* Implementations */,
+				3871109322BFE20500DF22B3 /* Protocols */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -396,9 +473,8 @@
 		38B6341122BE74620007ACFA /* Photos */ = {
 			isa = PBXGroup;
 			children = (
-				3891C68122BBCB6D00C1C394 /* BBRoverPhotosViewController.swift */,
-				38BD055B22BDC67500DEC889 /* BBPhotoViewerViewController.swift */,
-				38B6341222BE74980007ACFA /* BBFilterByDateViewController.swift */,
+				3871108622BED5CE00DF22B3 /* Implementations */,
+				3871107F22BED30D00DF22B3 /* Protocols */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -415,8 +491,10 @@
 			isa = PBXGroup;
 			children = (
 				38BD054C22BD90EC00DEC889 /* BBWireframe.swift */,
-				38BD054E22BD90F500DEC889 /* BBNavigator.swift */,
 				38BD055122BD91D100DEC889 /* BBAppStoryboard.swift */,
+				3871108B22BFBEB200DF22B3 /* BBCoordinatorProtocol.swift */,
+				3871108D22BFBF0700DF22B3 /* BBMainCoordinator.swift */,
+				3871108F22BFC91A00DF22B3 /* BBMainCoordinatorProtocol.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -602,34 +680,44 @@
 				3891C6C022BBDCB600C1C394 /* BBConnectionTest.swift in Sources */,
 				38B6341322BE74980007ACFA /* BBFilterByDateViewController.swift in Sources */,
 				38B6340E22BE62790007ACFA /* BBSyncDataPresenter.swift in Sources */,
+				3871109722BFE24F00DF22B3 /* BBGetRoverPhotosProtocol.swift in Sources */,
+				3871109222BFD0C300DF22B3 /* BBImageCache.swift in Sources */,
 				386C87C022BC82530002FB67 /* UIImageViewExtensions.swift in Sources */,
 				38BD055822BD93BF00DEC889 /* BBInteractorsInjector.swift in Sources */,
 				385BD6FB22BC611D0072042D /* BBGetRoverManifest.swift in Sources */,
 				38B6341722BE79E70007ACFA /* BBDateFormatters.swift in Sources */,
 				38BD055622BD939600DEC889 /* BBPresenterInjector.swift in Sources */,
-				38BD054F22BD90F500DEC889 /* BBNavigator.swift in Sources */,
 				38ABFFEC22BEB8D50096E563 /* BBCreateDateFilterInteractor.swift in Sources */,
+				3871109022BFC91A00DF22B3 /* BBMainCoordinatorProtocol.swift in Sources */,
 				38BD054D22BD90EC00DEC889 /* BBWireframe.swift in Sources */,
 				3891C6C622BBE43500C1C394 /* BBPhotosMetadata.swift in Sources */,
 				3891C6D022BBEBC900C1C394 /* BBRoversNameNetwork.swift in Sources */,
 				38ABFFEA22BEB61F0096E563 /* BBQueues.swift in Sources */,
+				3871108322BED4D000DF22B3 /* BBPhotoViewerProtocol.swift in Sources */,
+				3871109522BFE22100DF22B3 /* BBGetRoverManifestProtocol.swift in Sources */,
+				3871108522BED54A00DF22B3 /* BBFilterByDateViewProtocol.swift in Sources */,
 				38BD055222BD91D100DEC889 /* BBAppStoryboard.swift in Sources */,
+				3871108A22BED6C500DF22B3 /* BBBaseViewProtocol.swift in Sources */,
 				386C87BE22BC80840002FB67 /* BBPhotoCollectionViewCell.swift in Sources */,
 				3891C68222BBCB6D00C1C394 /* BBRoverPhotosViewController.swift in Sources */,
 				38BD055A22BD93F800DEC889 /* BBDataInjector.swift in Sources */,
+				3871108C22BFBEB200DF22B3 /* BBCoordinatorProtocol.swift in Sources */,
 				3891C6C222BBDDED00C1C394 /* BBNetworkError.swift in Sources */,
 				3891C6CE22BBEB6800C1C394 /* BBRoverName.swift in Sources */,
 				38BD056A22BDF3FA00DEC889 /* BBSyncDataOnboardingViewController.swift in Sources */,
 				38B6341A22BE808C0007ACFA /* BBDateFilter.swift in Sources */,
 				386C87C222BC8A620002FB67 /* BBRoverPhotosPresenter.swift in Sources */,
 				38B6341522BE788C0007ACFA /* BBFilterByDatePresenter.swift in Sources */,
+				3871109922BFE26D00DF22B3 /* BBCreateDateFiltersProtocol.swift in Sources */,
 				3891C68022BBCB6D00C1C394 /* AppDelegate.swift in Sources */,
 				38BD055C22BDC67500DEC889 /* BBPhotoViewerViewController.swift in Sources */,
 				385BD70122BC6A490072042D /* BBManifests.swift in Sources */,
 				3891C68822BBCB6D00C1C394 /* Rovers.xcdatamodeld in Sources */,
+				3871108E22BFBF0700DF22B3 /* BBMainCoordinator.swift in Sources */,
 				38BD055422BD921800DEC889 /* UIViewControllerExtensions.swift in Sources */,
 				3891C6D622BBEE3B00C1C394 /* BBRoverPhotos.swift in Sources */,
 				3891C6CC22BBEB3C00C1C394 /* BBRoversPhotosNetwork.swift in Sources */,
+				3871108122BED35200DF22B3 /* BBRoverPhotosViewProtocol.swift in Sources */,
 				3891C6C422BBE0CC00C1C394 /* BBManifestsNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

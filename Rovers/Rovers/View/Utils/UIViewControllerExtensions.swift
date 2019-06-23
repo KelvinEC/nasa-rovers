@@ -26,7 +26,10 @@ extension UIViewController
     {
         return appStoryboard.viewController(viewControllerClass: self)
     }
+}
 
+extension UIViewController: BBBaseViewProtocol
+{
     func showProgress()
     {
         SVProgressHUD.setDefaultStyle(.light)

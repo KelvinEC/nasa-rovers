@@ -10,22 +10,29 @@ import Foundation
 
 class BBRoverPhotosPresenter
 {
-    weak var view: BBRoverPhotosViewController?
-    private let _roversAvailable = BBRoverNameModel.allCases
-    private var _currentSelectedIndex: Int = 0
-    private let _getRoverPhotosInteractor: BBGetRoverPhotos
-    private var _displayingPhotos: [BBPhotoModel] = [BBPhotoModel]()
-    private let _roversManifests: [BBRoverManifestModel]
-    private let _createDateFiltersInteractor: BBCreateDateFilterInteractor
+    // MARK: - Class dependencies
+    weak var view: BBRoverPhotosViewProtocol?
+    private weak var _coordinator: BBMainCoordinatorProtocol?
+    private let _createDateFiltersInteractor: BBCreateDateFiltersProtocol
+    private let _getRoverPhotosInteractor: BBGetRoverPhotosProtocol
     private let _mainQueue = DispatchQueue.main
 
-    init(_ roverPhotosInteractor: BBGetRoverPhotos,
-         dateFiltersInteractor: BBCreateDateFilterInteractor,
+    // MARK: - Properties
+    private let _roversAvailable = BBRoverNameModel.allCases
+    private var _currentSelectedIndex: Int = 0
+    private var _displayingPhotos: [BBPhotoModel] = [BBPhotoModel]()
+    private let _roversManifests: [BBRoverManifestModel]
+    private var _currentDate: String = ""
+
+    init(_ roverPhotosInteractor: BBGetRoverPhotosProtocol,
+         dateFiltersInteractor: BBCreateDateFiltersProtocol,
+         coordinator: BBMainCoordinatorProtocol,
          roversManifests: [BBRoverManifestModel])
     {
         self._createDateFiltersInteractor = dateFiltersInteractor
         self._getRoverPhotosInteractor = roverPhotosInteractor
         self._roversManifests = roversManifests
+        self._coordinator = coordinator
     }
 
     func viewDidLoad()
@@ -43,10 +50,10 @@ class BBRoverPhotosPresenter
                 self?._mainQueue.async {
                     if let selfBlocked = self {
                         selfBlocked.view?.hideProgress(.dismiss)
-                        if dateFilters.count > 0 {
-                            BBNavigator.navigateToFilterByDate(dates: dateFilters,
-                                                               delegate: selfBlocked,
-                                                               from: selfBlocked.view!)
+                        if dateFilters.count > 0, let date =  BBDateFilter( serverDate: selfBlocked._currentDate) {
+                            selfBlocked._coordinator?.filterByDate(dates: dateFilters,
+                                                                   currentFilter: date,
+                                                                   delegate: selfBlocked)
                         } else {
                             selfBlocked.view?.showNoFiltersAvailableError()
                         }
@@ -58,9 +65,7 @@ class BBRoverPhotosPresenter
 
     func selectedRoverPhoto(index: Int)
     {
-        if let vc = view {
-            BBNavigator.navigateToPhotoViewer(photo: _displayingPhotos[index], from: vc)
-        }
+        _coordinator?.photoViewer(photo: _displayingPhotos[index])
     }
 
     func selectedRoverChanged(_ index: Int)
@@ -68,6 +73,7 @@ class BBRoverPhotosPresenter
         _currentSelectedIndex = index
         let currentRover = _roversAvailable[_currentSelectedIndex]
         if let roverMaxDate = _roversManifests.first(where: {$0.name == currentRover})?.maxDate {
+            _currentDate = roverMaxDate
             getPhotos(for: currentRover , date: roverMaxDate)
         }
     }
@@ -86,9 +92,7 @@ class BBRoverPhotosPresenter
                     case .success(let photos):
                         if rover == selfBlocked._roversAvailable[selfBlocked._currentSelectedIndex] {
                             selfBlocked._displayingPhotos.removeAll()
-                            if let pWrapped = photos {
-                                selfBlocked._displayingPhotos.append(contentsOf: pWrapped)
-                            }
+                            selfBlocked._displayingPhotos.append(contentsOf: photos)
                             selfBlocked.view?.show(photos: selfBlocked._displayingPhotos)
                             selfBlocked.view?.reloadData()
                         }
@@ -111,10 +115,13 @@ extension BBRoverPhotosPresenter: BBFilterByDateProtocol
     func selected(filter: String?)
     {
         if let date = filter {
+            _currentDate = date
             self._displayingPhotos.removeAll()
             self.view?.show(photos: self._displayingPhotos)
             self.view?.reloadData()
             getPhotos(for: _roversAvailable[_currentSelectedIndex], date: date)
+        } else {
+            selectedRoverChanged(_currentSelectedIndex)
         }
     }
 }

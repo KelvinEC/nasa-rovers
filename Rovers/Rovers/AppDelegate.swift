@@ -13,17 +13,24 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
     var window: UIWindow?
+    var coordinator: BBMainCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        BBNetworking.shared.set(authorization: "Ec39O4C3p9Yqi2DuRHQYBBMfNNsW65lzM3V0Qtvo")
+        let mainNav = BBWireframe.createNavigationController(nil)
+
+        coordinator = BBMainCoordinator(navigationController: mainNav)
+        coordinator?.start()
 
         let frame = UIScreen.main.bounds
         self.window = UIWindow(frame: frame)
 
-        self.window?.rootViewController = BBWireframe.createOnboardingPageViewController()
+        self.window?.rootViewController = mainNav
         self.window?.makeKeyAndVisible()
 
+        BBNetworking.shared.set(authorization: "Ec39O4C3p9Yqi2DuRHQYBBMfNNsW65lzM3V0Qtvo")
+        
+        BBImageCache.setCache(maxSize: 300 * 1024 * 1024) //300Mb of image Cache
         return true
     }
 

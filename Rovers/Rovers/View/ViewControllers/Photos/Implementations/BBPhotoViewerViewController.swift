@@ -55,11 +55,13 @@ class BBPhotoViewerViewController: UIViewController
     {
         eventHandler.cameraNameTapped()
     }
+}
 
-    // MARK: - View Methods
+extension BBPhotoViewerViewController: BBPhotoViewerProtocol
+{
     func show(photo: BBPhotoModel)
     {
-        if let url = URL(string: photo.imgSrc.replacingOccurrences(of: "http://", with: "https://")) {
+        if let url = URL(string: photo.imgSrc) {
             photoImageView.setImage(with: url, placeholder: nil)
         }
     }
@@ -71,15 +73,17 @@ class BBPhotoViewerViewController: UIViewController
 
     func share(with imageSrc: String)
     {
-        if let url = URL(string: imageSrc.replacingOccurrences(of: "http://", with: "https://")) {
-            KingfisherManager.shared.retrieveImage(with: url) { result in
+        if let url = URL(string: imageSrc) {
+            BBImageCache.getImage(url) { result in
                 switch result {
                 case .success(let img):
-                    let imageToShare = [ img.image ]
+                    let imageToShare = [img]
                     let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
                     activityViewController.popoverPresentationController?.sourceView = self.view
                     self.present(activityViewController, animated: true, completion: nil)
-                case .failure: break
+                case .failure:
+                    self.showError(title: NSLocalizedString("Error", comment: ""),
+                                   description: NSLocalizedString("Failed to get Image to share. Please, try again", comment: ""))
                 }
             }
         }
@@ -93,7 +97,8 @@ class BBPhotoViewerViewController: UIViewController
 
 extension BBPhotoViewerViewController: UIScrollViewDelegate
 {
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView?
+    {
         return photoImageView
     }
 }

@@ -10,12 +10,12 @@ import Foundation
 
 class BBPresenterInjector
 {
-    static func createRoversPhotosViewControllerPresenter(manifests: [BBRoverManifestModel]) -> BBRoverPhotosPresenter
+    static func createRoversPhotosViewControllerPresenter(coordinator: BBMainCoordinatorProtocol, manifests: [BBRoverManifestModel]) -> BBRoverPhotosPresenter
     {
         let photosInteractor = BBInteractorsInjector.createGetRoverPhotosInteractor()
         let dateFilterInteractor = BBInteractorsInjector.createGetDateFiltersInteractor()
 
-        return BBRoverPhotosPresenter(photosInteractor, dateFiltersInteractor: dateFilterInteractor, roversManifests: manifests)
+        return BBRoverPhotosPresenter(photosInteractor, dateFiltersInteractor: dateFilterInteractor, coordinator: coordinator, roversManifests: manifests)
     }
 
     static func createPhotoViewerControllerPResenter(photo: BBPhotoModel) -> BBPhotoViewerPresenter
@@ -23,15 +23,15 @@ class BBPresenterInjector
         return BBPhotoViewerPresenter(photo: photo)
     }
 
-    static func createSyncDataControllerPresenter() -> BBSyncDataPresenter
+    static func createSyncDataControllerPresenter(coordinator: BBMainCoordinatorProtocol) -> BBSyncDataPresenter
     {
         let manifestsInteractor = BBInteractorsInjector.createGetManifestsInteractor()
 
-        return BBSyncDataPresenter(manifestsInteractor)
+        return BBSyncDataPresenter(manifestsInteractor, coordinator: coordinator)
     }
 
-    static func createFilterByDatePresenter(_ dates: [BBDateFilter], delegate: BBFilterByDateProtocol) -> BBFilterByDatePresenter
+    static func createFilterByDatePresenter(_ dates: [BBDateFilter], currentFilter: BBDateFilter, delegate: BBFilterByDateProtocol) -> BBFilterByDatePresenter
     {
-        return BBFilterByDatePresenter(dates, delegate: delegate)
+        return BBFilterByDatePresenter(dates, selectedValue: currentFilter, delegate: delegate)
     }
 }
