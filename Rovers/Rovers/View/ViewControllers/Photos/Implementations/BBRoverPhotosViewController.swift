@@ -82,6 +82,22 @@ extension BBRoverPhotosViewController: BBRoverPhotosViewProtocol
         self.roverPhotosCollectionView.reloadData()
     }
 
+    func appendPhotos(photos: [BBPhotoModel])
+    {
+        self.photos.append(contentsOf: photos)
+    }
+
+    func insert(numberOf rows: Int)
+    {
+        let currentNumberOfItems = roverPhotosCollectionView.numberOfItems(inSection: 0)
+        var indexPaths = [IndexPath]()
+        for i in  currentNumberOfItems ..< currentNumberOfItems + rows {
+            indexPaths.append(IndexPath(row: i, section: 0))
+        }
+
+        roverPhotosCollectionView.insertItems(at: indexPaths)
+    }
+
     func showNoFiltersAvailableError()
     {
         showError(title: NSLocalizedString("Error", comment: ""),
@@ -132,6 +148,11 @@ extension BBRoverPhotosViewController: UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
     {
         return UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 4)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
+    {
+        eventHandler.willShow(indexPath.row)
     }
 }
 
