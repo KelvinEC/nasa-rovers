@@ -10,6 +10,6 @@ import Foundation
 
 protocol BBGetRoverPhotosProtocol
 {
-    func get(for roverName: BBRoverNameModel, date: String,
+    func get(for roverName: BBRoverNameModel, date: String, page: Int,
              handler: @escaping (Result<[BBPhotoModel], Error>) -> Void)
 }

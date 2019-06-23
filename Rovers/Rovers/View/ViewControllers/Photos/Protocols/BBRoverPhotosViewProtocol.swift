@@ -17,4 +17,8 @@ protocol BBRoverPhotosViewProtocol: AnyObject, BBBaseViewProtocol
     func show(photos: [BBPhotoModel])
 
     func show(rovers: [String])
+
+    func appendPhotos(photos: [BBPhotoModel])
+
+    func insert(numberOf rows: Int)
 }
