@@ -19,11 +19,11 @@ class BBGetRoverPhotos: BBGetRoverPhotosProtocol
         _queue = queue
     }
 
-    func get(for roverName: BBRoverNameModel, date: String,
+    func get(for roverName: BBRoverNameModel, date: String, page: Int,
              handler: @escaping (Result<[BBPhotoModel], Error>) -> Void)
     {
         if let rover = BBRoverNameNetwork(rawValue: roverName.rawValue.lowercased()) {
-            self._roverPhotosNetworking.getRoverPhotos(rover: rover, date: date) { [weak self] result in
+            self._roverPhotosNetworking.getRoverPhotos(rover: rover, date: date, page: page) { [weak self] result in
                 self?._queue.async {
                     switch result {
                     case .success(let photos):

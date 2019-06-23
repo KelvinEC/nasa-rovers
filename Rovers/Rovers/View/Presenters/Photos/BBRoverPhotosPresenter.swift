@@ -23,6 +23,9 @@ class BBRoverPhotosPresenter
     private var _displayingPhotos: [BBPhotoModel] = [BBPhotoModel]()
     private let _roversManifests: [BBRoverManifestModel]
     private var _currentDate: String = ""
+    private var _currentPage: Int = 0
+    private var _fetchinNewPage: Bool = false
+    private let _pageMaxSize = 25
 
     init(_ roverPhotosInteractor: BBGetRoverPhotosProtocol,
          dateFiltersInteractor: BBCreateDateFiltersProtocol,
@@ -71,10 +74,22 @@ class BBRoverPhotosPresenter
     func selectedRoverChanged(_ index: Int)
     {
         _currentSelectedIndex = index
+        _currentPage = 0
         let currentRover = _roversAvailable[_currentSelectedIndex]
         if let roverMaxDate = _roversManifests.first(where: {$0.name == currentRover})?.maxDate {
             _currentDate = roverMaxDate
-            getPhotos(for: currentRover , date: roverMaxDate)
+            getPhotos(for: currentRover , date: roverMaxDate, page: _currentPage)
+        }
+    }
+
+    func willShow(_ index: Int)
+    {
+        if index > (_displayingPhotos.count - 3), !_fetchinNewPage, _displayingPhotos.count % _pageMaxSize == 0 {
+            _fetchinNewPage = true
+            _currentPage += 1
+            getPhotos(for: _roversAvailable[_currentSelectedIndex], date: _currentDate, page: _currentPage)
+
+            print("Trigger Page Update")
         }
     }
 
@@ -83,18 +98,27 @@ class BBRoverPhotosPresenter
         return BBRoverNameModel.allCases.map { $0.rawValue }
     }
 
-    func getPhotos(for rover: BBRoverNameModel, date: String)
+    private func getPhotos(for rover: BBRoverNameModel, date: String, page: Int)
     {
-        _getRoverPhotosInteractor.get(for: rover, date: date) { [weak self] result in
+        _getRoverPhotosInteractor.get(for: rover, date: date, page: page) { [weak self] result in
             if let selfBlocked = self {
                 selfBlocked._mainQueue.sync {
                     switch result {
                     case .success(let photos):
                         if rover == selfBlocked._roversAvailable[selfBlocked._currentSelectedIndex] {
-                            selfBlocked._displayingPhotos.removeAll()
-                            selfBlocked._displayingPhotos.append(contentsOf: photos)
-                            selfBlocked.view?.show(photos: selfBlocked._displayingPhotos)
-                            selfBlocked.view?.reloadData()
+                            if page == 0 {
+                                selfBlocked._displayingPhotos.removeAll()
+                                selfBlocked._displayingPhotos.append(contentsOf: photos)
+                                selfBlocked.view?.show(photos: selfBlocked._displayingPhotos)
+                                selfBlocked.view?.reloadData()
+                            } else {
+                                self?._fetchinNewPage = false
+                                selfBlocked.view?.appendPhotos(photos: photos)
+                                selfBlocked._displayingPhotos.append(contentsOf: photos)
+                                selfBlocked.view?.insert(numberOf: photos.count)
+
+                                print("Updated View with \(photos.count) new itens")
+                            }
                         }
                     case .failure(let err):
                         switch err {
@@ -116,10 +140,11 @@ extension BBRoverPhotosPresenter: BBFilterByDateProtocol
     {
         if let date = filter {
             _currentDate = date
+            _currentPage = 0
             self._displayingPhotos.removeAll()
             self.view?.show(photos: self._displayingPhotos)
             self.view?.reloadData()
-            getPhotos(for: _roversAvailable[_currentSelectedIndex], date: date)
+            getPhotos(for: _roversAvailable[_currentSelectedIndex], date: date, page: _currentPage)
         } else {
             selectedRoverChanged(_currentSelectedIndex)
         }

@@ -11,6 +11,7 @@ import Foundation
 enum BBRoversPhotosParameters: String
 {
     case earthDate = "earth_date"
+    case page = "page"
 }
 
 class BBRoversPhotosNetworking
@@ -24,12 +25,13 @@ class BBRoversPhotosNetworking
         networkingLayer = networking
     }
 
-    func getRoverPhotos(rover: BBRoverNameNetwork, date: String,
+    func getRoverPhotos(rover: BBRoverNameNetwork, date: String, page: Int,
                           handler: @escaping (Result<BBRoverPhotosModel?, Error>) -> Void)
     {
         if let request = networkingLayer.createRequest(operation: mainRoute + rover.rawValue + finalRoute,
                                                        type: .get,
-                                                       parameters: [BBRoversPhotosParameters.earthDate.rawValue: date]) {
+                                                       parameters: [BBRoversPhotosParameters.earthDate.rawValue: date,
+                                                        BBRoversPhotosParameters.page.rawValue: page]) {
             networkingLayer.execute(request: request) { result in
                 switch result {
                 case .success(let photos):
