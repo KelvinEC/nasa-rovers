@@ -18,12 +18,13 @@ class BBWireframe
 
         return UINavigationController()
     }
-    
+
     static func createRoverPhotoList(coordinator: BBMainCoordinatorProtocol,
                                      manifests: [BBRoverManifestModel]) -> BBRoverPhotosViewController
     {
-        let vc = BBRoverPhotosViewController.instantiateFromAppStoryboard(.Main)
-        let eventHandler = BBPresenterInjector.createRoversPhotosViewControllerPresenter(coordinator: coordinator, manifests: manifests)
+        let vc = BBRoverPhotosViewController.instantiateFromAppStoryboard(.main)
+        let eventHandler = BBPresenterInjector.createRoversPhotosViewControllerPresenter(coordinator: coordinator,
+                                                                                         manifests: manifests)
 
         eventHandler.view = vc
         vc.eventHandler = eventHandler
@@ -33,7 +34,7 @@ class BBWireframe
 
     static func createPhotoViewer(photo: BBPhotoModel) -> BBPhotoViewerViewController
     {
-        let vc = BBPhotoViewerViewController.instantiateFromAppStoryboard(.Main)
+        let vc = BBPhotoViewerViewController.instantiateFromAppStoryboard(.main)
         let eventHandler = BBPresenterInjector.createPhotoViewerControllerPResenter(photo: photo)
 
         vc.eventHandler = eventHandler
@@ -44,12 +45,12 @@ class BBWireframe
 
     static func createWelcomeScreen() -> BBWelcomeOnboardingViewController
     {
-        return BBWelcomeOnboardingViewController.instantiateFromAppStoryboard(.Onboarding)
+        return BBWelcomeOnboardingViewController.instantiateFromAppStoryboard(.onboarding)
     }
 
     static func createSyncDataScreen(coordinator: BBMainCoordinatorProtocol) -> BBSyncDataOnboardingViewController
     {
-        let vc  = BBSyncDataOnboardingViewController.instantiateFromAppStoryboard(.Onboarding)
+        let vc  = BBSyncDataOnboardingViewController.instantiateFromAppStoryboard(.onboarding)
         let eventHandler = BBPresenterInjector.createSyncDataControllerPresenter(coordinator: coordinator)
 
         vc.eventHandler = eventHandler
@@ -58,18 +59,23 @@ class BBWireframe
         return vc
     }
 
-    static func createOnboardingPageViewController(coordinator: BBMainCoordinatorProtocol) -> BBOnboardingPagerViewController
+    static func createOnboardingPageViewController(coordinator: BBMainCoordinatorProtocol) ->
+        BBOnboardingPagerViewController
     {
-        let vc = BBOnboardingPagerViewController.instantiateFromAppStoryboard(.Onboarding)
+        let vc = BBOnboardingPagerViewController.instantiateFromAppStoryboard(.onboarding)
         vc.pages = [BBWireframe.createSyncDataScreen(coordinator: coordinator)]
 
         return vc
     }
 
-    static func createFilterByDateController(_ dates: [BBDateFilter], currentFilter: BBDateFilter, delegate: BBFilterByDateProtocol) -> BBFilterByDateViewController
+    static func createFilterByDateController(_ dates: [BBDateFilter],
+                                             currentFilter: BBDateFilter,
+                                             delegate: BBFilterByDateProtocol) -> BBFilterByDateViewController
     {
-        let vc = BBFilterByDateViewController.instantiateFromAppStoryboard(.Main)
-        let eventHandler = BBPresenterInjector.createFilterByDatePresenter(dates, currentFilter: currentFilter, delegate: delegate)
+        let vc = BBFilterByDateViewController.instantiateFromAppStoryboard(.main)
+        let eventHandler = BBPresenterInjector.createFilterByDatePresenter(dates,
+                                                                           currentFilter: currentFilter,
+                                                                           delegate: delegate)
 
         vc.eventHandler = eventHandler
         eventHandler.view = vc

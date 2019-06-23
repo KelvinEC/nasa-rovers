@@ -32,8 +32,9 @@ extension BBOnboardingPagerViewController: UIPageViewControllerDataSource
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return 0
     }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
+
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            viewControllerBefore viewController: UIViewController) -> UIViewController?
     {
         guard let viewControllerIndex = pages.firstIndex(of: viewController) else {
             return nil
@@ -48,7 +49,8 @@ extension BBOnboardingPagerViewController: UIPageViewControllerDataSource
         return pages[previousIndex]
     }
 
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController?
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            viewControllerAfter viewController: UIViewController) -> UIViewController?
     {
         guard let viewControllerIndex = pages.firstIndex(of: viewController) else {
             return nil

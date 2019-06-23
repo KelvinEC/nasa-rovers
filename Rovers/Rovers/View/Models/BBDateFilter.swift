@@ -19,7 +19,7 @@ struct BBDateFilter
         guard let sDate = serverDate else {
             return nil
         }
-        
+
         let userDateFormatter = DateFormatter()
         userDateFormatter.dateFormat = BBDateFormatters.user.rawValue
 

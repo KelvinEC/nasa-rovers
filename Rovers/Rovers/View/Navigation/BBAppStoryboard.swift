@@ -8,15 +8,17 @@
 
 import UIKit
 
-enum BBAppStoryboard : String {
-    case Main = "Main"
-    case Onboarding = "Onboarding"
+enum BBAppStoryboard: String
+{
+    case main = "Main"
+    case onboarding = "Onboarding"
 
-    var instance : UIStoryboard {
+    var instance: UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)
     }
 
-    func viewController<T : UIViewController>(viewControllerClass: T.Type) -> T
+    //swiftlint:disable force_cast
+    func viewController<T: UIViewController>(viewControllerClass: T.Type) -> T
     {
         return self.instance.instantiateViewController(withIdentifier: viewControllerClass.storyboardID) as! T
     }
