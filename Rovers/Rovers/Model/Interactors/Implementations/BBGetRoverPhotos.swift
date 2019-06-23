@@ -39,7 +39,8 @@ class BBGetRoverPhotos: BBGetRoverPhotosProtocol
                             dateFormatter.dateFormat = BBDateFormatters.server.rawValue
 
                             response = response.sorted { f, s in
-                                if let fDate = dateFormatter.date(from: f.earthDate), let sDate = dateFormatter.date(from: s.earthDate) {
+                                if let fDate = dateFormatter.date(from: f.earthDate),
+                                    let sDate = dateFormatter.date(from: s.earthDate) {
                                     return fDate.compare(sDate) == .orderedDescending
                                 }
 

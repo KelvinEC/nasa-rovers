@@ -20,13 +20,18 @@ class BBRoverPhotosViewController: UIViewController
     private var photos: [BBPhotoModel] = [BBPhotoModel]()
     var eventHandler: BBRoverPhotosPresenter!
 
+    let roverPhotosCellIdentifier = "BBPhotoCollectionViewCell"
+
     // MARK: - UIView Methods
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationItem.title = "Mars Rovers Photos"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "calendar"), style: .plain, target: self, action: #selector(filterByDateTapped))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "calendar"),
+                                                                 style: .plain,
+                                                                 target: self,
+                                                                 action: #selector(filterByDateTapped))
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
@@ -36,9 +41,9 @@ class BBRoverPhotosViewController: UIViewController
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         self.segmentedToolbar.backgroundColor = UIColor.white
         self.segmentedToolbar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
-        roverPhotosCollectionView.register(UINib(nibName: BBRoverPhotosViewController.roverPhotosCellIdentifier,
+        roverPhotosCollectionView.register(UINib(nibName: roverPhotosCellIdentifier,
                                                  bundle: Bundle.main),
-                                           forCellWithReuseIdentifier: BBRoverPhotosViewController.roverPhotosCellIdentifier)
+                                           forCellWithReuseIdentifier: roverPhotosCellIdentifier)
 
         roverPhotosCollectionView.delegate = self
         roverPhotosCollectionView.dataSource = self
@@ -107,8 +112,6 @@ extension BBRoverPhotosViewController: BBRoverPhotosViewProtocol
 
 extension BBRoverPhotosViewController: UICollectionViewDataSource
 {
-    static let roverPhotosCellIdentifier = "BBPhotoCollectionViewCell"
-
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         collectionView.deselectItem(at: indexPath, animated: true)
@@ -122,7 +125,7 @@ extension BBRoverPhotosViewController: UICollectionViewDataSource
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BBRoverPhotosViewController.roverPhotosCellIdentifier,
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: roverPhotosCellIdentifier,
                                                          for: indexPath) as? BBPhotoCollectionViewCell {
             let photo = photos[indexPath.row]
 
@@ -139,18 +142,24 @@ extension BBRoverPhotosViewController: UICollectionViewDataSource
 
 extension BBRoverPhotosViewController: UICollectionViewDelegateFlowLayout
 {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         let pictureSize = (UIScreen.main.bounds.width / 2) - 10
         return CGSize(width: pictureSize, height: pictureSize)
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets
     {
         return UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 4)
     }
 
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath)
     {
         eventHandler.willShow(indexPath.row)
     }

@@ -168,7 +168,9 @@ class BBNetworking: NSObject
         return query.joined(separator: "&")
     }
 
-    private func parseURLRequestResponse(data: Data?, urlResponse: URLResponse?, error: Error?) -> Result<BBServerResult, BBNetworkError>
+    private func parseURLRequestResponse(data: Data?,
+                                         urlResponse: URLResponse?,
+                                         error: Error?) -> Result<BBServerResult, BBNetworkError>
     {
         guard error == nil, let httpUrlResponse = urlResponse as? HTTPURLResponse, let responseData = data else {
             return .failure(.connectionError)

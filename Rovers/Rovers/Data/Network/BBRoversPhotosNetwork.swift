@@ -25,8 +25,10 @@ class BBRoversPhotosNetworking
         networkingLayer = networking
     }
 
-    func getRoverPhotos(rover: BBRoverNameNetwork, date: String, page: Int,
-                          handler: @escaping (Result<BBRoverPhotosModel?, Error>) -> Void)
+    func getRoverPhotos(rover: BBRoverNameNetwork,
+                        date: String,
+                        page: Int,
+                        handler: @escaping (Result<BBRoverPhotosModel?, Error>) -> Void)
     {
         if let request = networkingLayer.createRequest(operation: mainRoute + rover.rawValue + finalRoute,
                                                        type: .get,

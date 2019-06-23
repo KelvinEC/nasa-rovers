@@ -10,12 +10,14 @@ import Foundation
 
 class BBPresenterInjector
 {
-    static func createRoversPhotosViewControllerPresenter(coordinator: BBMainCoordinatorProtocol, manifests: [BBRoverManifestModel]) -> BBRoverPhotosPresenter
+    static func createRoversPhotosViewControllerPresenter(coordinator: BBMainCoordinatorProtocol,
+                                                          manifests: [BBRoverManifestModel]) -> BBRoverPhotosPresenter
     {
         let photosInteractor = BBInteractorsInjector.createGetRoverPhotosInteractor()
         let dateFilterInteractor = BBInteractorsInjector.createGetDateFiltersInteractor()
 
-        return BBRoverPhotosPresenter(photosInteractor, dateFiltersInteractor: dateFilterInteractor, coordinator: coordinator, roversManifests: manifests)
+        return BBRoverPhotosPresenter(photosInteractor, dateFiltersInteractor: dateFilterInteractor,
+                                      coordinator: coordinator, roversManifests: manifests)
     }
 
     static func createPhotoViewerControllerPResenter(photo: BBPhotoModel) -> BBPhotoViewerPresenter
@@ -30,7 +32,9 @@ class BBPresenterInjector
         return BBSyncDataPresenter(manifestsInteractor, coordinator: coordinator)
     }
 
-    static func createFilterByDatePresenter(_ dates: [BBDateFilter], currentFilter: BBDateFilter, delegate: BBFilterByDateProtocol) -> BBFilterByDatePresenter
+    static func createFilterByDatePresenter(_ dates: [BBDateFilter],
+                                            currentFilter: BBDateFilter,
+                                            delegate: BBFilterByDateProtocol) -> BBFilterByDatePresenter
     {
         return BBFilterByDatePresenter(dates, selectedValue: currentFilter, delegate: delegate)
     }
