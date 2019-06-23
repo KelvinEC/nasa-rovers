@@ -18,7 +18,7 @@ enum ProgressHideOptions
 
 extension UIViewController
 {
-    class var storyboardID : String {
+    class var storyboardID: String {
         return "\(self)_ID"
     }
 
@@ -68,6 +68,8 @@ extension UIViewController: BBBaseViewProtocol
 
     func showUnknownError()
     {
-        showError(title: NSLocalizedString("Error", comment: ""), description: NSLocalizedString("The martians attacked us and result in an unexpected behaviour. :/ \nTry again!", comment: ""))
+        showError(title: NSLocalizedString("Error", comment: ""),
+                  description: NSLocalizedString("The martians attacked us and" +
+                    " result in an unexpected behaviour. :/ \nTry again!", comment: ""))
     }
 }

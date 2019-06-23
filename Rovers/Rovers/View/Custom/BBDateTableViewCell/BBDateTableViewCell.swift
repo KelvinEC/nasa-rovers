@@ -11,7 +11,7 @@ import UIKit
 class BBDateTableViewCell: UITableViewCell
 {
     @IBOutlet weak var dateLabel: UILabel!
-    
+
     override func awakeFromNib()
     {
         super.awakeFromNib()

@@ -39,13 +39,21 @@ class BBFilterByDateViewController: UIViewController
         navigationItem.searchController = searchController
         definesPresentationContext = true
 
-        datesTableView.register(UINib(nibName: dateCellIdentifier, bundle: Bundle.main), forCellReuseIdentifier: dateCellIdentifier)
+        datesTableView.register(UINib(nibName: dateCellIdentifier,
+                                      bundle: Bundle.main),
+                                forCellReuseIdentifier: dateCellIdentifier)
         datesTableView.delegate = self
         datesTableView.dataSource = self
 
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Reset", comment: ""), style: .plain, target: self, action: #selector(resetTapped))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Reset", comment: ""),
+                                                                style: .plain,
+                                                                target: self,
+                                                                action: #selector(resetTapped))
 
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Apply", comment: ""), style: .plain, target: self, action: #selector(applyTapped))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Apply", comment: ""),
+                                                                 style: .plain,
+                                                                 target: self,
+                                                                 action: #selector(applyTapped))
 
         eventHandler.viewDidLoad()
     }
@@ -116,7 +124,8 @@ extension BBFilterByDateViewController: UITableViewDataSource
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        if let cell = tableView.dequeueReusableCell(withIdentifier: dateCellIdentifier, for: indexPath) as? BBDateTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: dateCellIdentifier,
+                                                    for: indexPath) as? BBDateTableViewCell {
             cell.dateLabel.text = _dates[indexPath.row]
             cell.selectionStyle = .none
 
@@ -134,7 +143,7 @@ extension BBFilterByDateViewController: UITableViewDataSource
     }
 }
 
-extension BBFilterByDateViewController : UITableViewDelegate
+extension BBFilterByDateViewController: UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {

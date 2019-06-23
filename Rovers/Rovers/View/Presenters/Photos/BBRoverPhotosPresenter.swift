@@ -78,7 +78,7 @@ class BBRoverPhotosPresenter
         let currentRover = _roversAvailable[_currentSelectedIndex]
         if let roverMaxDate = _roversManifests.first(where: {$0.name == currentRover})?.maxDate {
             _currentDate = roverMaxDate
-            getPhotos(for: currentRover , date: roverMaxDate, page: _currentPage)
+            getPhotos(for: currentRover, date: roverMaxDate, page: _currentPage)
         }
     }
 

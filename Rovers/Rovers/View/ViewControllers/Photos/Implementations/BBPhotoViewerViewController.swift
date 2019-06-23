@@ -32,7 +32,9 @@ class BBPhotoViewerViewController: UIViewController
         self.toolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-        cameraNameBackgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedCameraName(_:))))
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedCameraName(_:)))
+        cameraNameBackgroundView.addGestureRecognizer(tapGesture)
 
         imageScrollView.delegate = self
 
@@ -78,12 +80,14 @@ extension BBPhotoViewerViewController: BBPhotoViewerProtocol
                 switch result {
                 case .success(let img):
                     let imageToShare = [img]
-                    let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+                    let activityViewController = UIActivityViewController(activityItems: imageToShare,
+                                                                          applicationActivities: nil)
                     activityViewController.popoverPresentationController?.sourceView = self.view
                     self.present(activityViewController, animated: true, completion: nil)
                 case .failure:
                     self.showError(title: NSLocalizedString("Error", comment: ""),
-                                   description: NSLocalizedString("Failed to get Image to share. Please, try again", comment: ""))
+                                   description: NSLocalizedString("Failed to get Image to share." +
+                                    " Please, try again", comment: ""))
                 }
             }
         }

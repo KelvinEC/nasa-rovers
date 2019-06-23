@@ -21,7 +21,7 @@ class BBSyncDataPresenter
         self._getManifestsInteractor = getManifestsInteractor
         self._coordinator = coordinator
     }
-    
+
     func syncDataTapped()
     {
         view?.showProgress()

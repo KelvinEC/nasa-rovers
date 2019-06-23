@@ -10,7 +10,7 @@ import UIKit
 
 class BBSyncDataOnboardingViewController: UIViewController
 {
-    // MARK:- IBOutlets
+    // MARK: - IBOutlets
     @IBOutlet weak var roversHelloLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var syncDataButton: UIButton!
@@ -46,6 +46,4 @@ If you will enjoy the pictures, feel free to share with your friends!
     {
         eventHandler.syncDataTapped()
     }
-    
-    // MARK: - View Protocol Methods
 }

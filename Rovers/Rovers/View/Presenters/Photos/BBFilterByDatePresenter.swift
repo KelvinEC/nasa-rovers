@@ -30,7 +30,7 @@ class BBFilterByDatePresenter
         _datesAvailable = datesAvailable
         _filteredDates.append(contentsOf: _datesAvailable)
 
-        _datesAvailable.sort { f,s in
+        _datesAvailable.sort { f, s in
             f.date.compare(s.date) == .orderedDescending
         }
     }
@@ -46,7 +46,8 @@ class BBFilterByDatePresenter
 
         if let query = criteria, !query.isEmpty {
             _filteredDates = _datesAvailable.filter {
-                $0.serverDate.lowercased().contains(query.lowercased()) || $0.userDate.lowercased().contains(query.lowercased())
+                $0.serverDate.lowercased().contains(query.lowercased()) ||
+                    $0.userDate.lowercased().contains(query.lowercased())
             }
         } else {
             _filteredDates.append(contentsOf: _datesAvailable)

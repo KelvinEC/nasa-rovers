@@ -11,12 +11,12 @@ import Foundation
 protocol BBBaseViewProtocol
 {
     func showProgress()
-    
+
     func hideProgress(_ option: ProgressHideOptions)
-    
+
     func showError(title: String, description: String)
-    
+
     func showNoInternetConnectionError()
-    
+
     func showUnknownError()
 }
