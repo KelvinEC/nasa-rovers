@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BBCreateDateFilterInteractor
+class BBCreateDateFilterInteractor: BBCreateDateFiltersProtocol
 {
     private let _queue: DispatchQueue
 

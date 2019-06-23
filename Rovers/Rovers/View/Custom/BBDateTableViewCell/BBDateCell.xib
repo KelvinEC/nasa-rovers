@@ -19,35 +19,23 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zh-ce-8Q8">
-                        <rect key="frame" x="32" y="8" width="42" height="27.5"/>
+                        <rect key="frame" x="32" y="8" width="350" height="27.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="YTV-uS-mkv">
-                        <rect key="frame" x="358" y="10" width="24" height="24"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="24" id="NVU-rG-guI"/>
-                            <constraint firstAttribute="width" constant="24" id="v2D-bw-ezm"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="0Zh-ce-8Q8" firstAttribute="leading" secondItem="gA9-cf-XI2" secondAttribute="leading" constant="32" id="3dN-ku-mbE"/>
-                    <constraint firstAttribute="trailing" secondItem="YTV-uS-mkv" secondAttribute="trailing" constant="32" id="63A-oe-uYv"/>
                     <constraint firstAttribute="bottom" secondItem="0Zh-ce-8Q8" secondAttribute="bottom" constant="8" id="FFD-lI-KTI"/>
-                    <constraint firstItem="YTV-uS-mkv" firstAttribute="centerY" secondItem="gA9-cf-XI2" secondAttribute="centerY" id="boY-PV-tUW"/>
+                    <constraint firstAttribute="trailing" secondItem="0Zh-ce-8Q8" secondAttribute="trailing" constant="32" id="Tcn-uJ-ok5"/>
                     <constraint firstItem="0Zh-ce-8Q8" firstAttribute="top" secondItem="gA9-cf-XI2" secondAttribute="top" constant="8" id="fR3-XI-rvk"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="checkmarkImageView" destination="YTV-uS-mkv" id="AL3-Sw-HtI"/>
                 <outlet property="dateLabel" destination="0Zh-ce-8Q8" id="vwU-6b-RVB"/>
             </connections>
             <point key="canvasLocation" x="86" y="-27"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="checkmark" width="51" height="37.5"/>
-    </resources>
 </document>
